@@ -1,0 +1,1307 @@
+2024-07-12T12:07:05.015Z info: server started successfully! {}
+2024-07-12T12:07:05.018Z info: Http server started successfully! {}
+[32m2024-07-12T12:10:19.757Z info: server started successfully! {}[39m
+[32m2024-07-12T12:10:19.760Z info: Http server started successfully! {}[39m
+2024-07-12T12:12:16.352Z info: server started successfully! {}
+2024-07-12T12:12:16.355Z info: Http server started successfully! {}
+2024-07-12T12:48:37.461Z info: server started successfully! {}
+2024-07-12T12:48:37.465Z info: Http server started successfully! {}
+2024-07-12T12:50:38.603Z info: server started successfully! {}
+2024-07-12T12:50:38.605Z info: Http server started successfully! {}
+2024-07-12T12:50:55.039Z info: server started successfully! {}
+2024-07-12T12:50:55.043Z info: Http server started successfully! {}
+2024-07-12T12:51:09.288Z info: server started successfully! {}
+2024-07-12T12:51:09.292Z info: Http server started successfully! {}
+2024-07-12T12:51:53.913Z info: server started successfully! {}
+2024-07-12T12:51:53.917Z info: Http server started successfully! {}
+2024-07-12T12:55:02.186Z info: server started successfully! {}
+2024-07-12T12:55:02.189Z info: Http server started successfully! {}
+2024-07-12T12:55:20.542Z info: server started successfully! {}
+2024-07-12T12:55:20.546Z info: Http server started successfully! {}
+2024-07-12T12:55:46.289Z info: server started successfully! {}
+2024-07-12T12:55:46.292Z info: Http server started successfully! {}
+2024-07-12T12:56:32.445Z info: server started successfully! {}
+2024-07-12T12:56:32.448Z info: Http server started successfully! {}
+2024-07-12T13:01:19.635Z info: server started successfully! {}
+2024-07-12T13:01:19.638Z info: Http server started successfully! {}
+2024-07-12T13:03:44.544Z info: server started successfully! {}
+2024-07-12T13:03:44.547Z info: Http server started successfully! {}
+2024-07-12T13:04:45.971Z info: server started successfully! {}
+2024-07-12T13:04:45.974Z info: Http server started successfully! {}
+2024-07-12T13:04:50.056Z info: server started successfully! {}
+2024-07-12T13:04:50.059Z info: Http server started successfully! {}
+2024-07-12T13:05:35.107Z info: server started successfully! {}
+2024-07-12T13:05:35.111Z info: Http server started successfully! {}
+2024-07-12T13:05:42.630Z info: server started successfully! {}
+2024-07-12T13:05:42.634Z info: Http server started successfully! {}
+2024-07-12T13:07:51.489Z info: server started successfully! {}
+2024-07-12T13:07:51.492Z info: Http server started successfully! {}
+2024-07-12T13:07:54.883Z error: stderr: /home/devops/test.sh: line 4: echso: command not found
+ {}
+2024-07-12T13:42:26.427Z info: server started successfully! {}
+2024-07-12T13:42:26.430Z info: Http server started successfully! {}
+2024-07-12T13:47:27.309Z info: server started successfully! {}
+2024-07-12T13:47:27.312Z info: Http server started successfully! {}
+2024-07-12T13:48:00.129Z info: server started successfully! {}
+2024-07-12T13:48:00.133Z info: Http server started successfully! {}
+2024-07-12T13:48:17.228Z info: server started successfully! {}
+2024-07-12T13:48:17.231Z info: Http server started successfully! {}
+2024-07-12T13:49:56.102Z info: server started successfully! {}
+2024-07-12T13:49:56.105Z info: Http server started successfully! {}
+2024-07-12T13:56:36.380Z info: server started successfully! {}
+2024-07-12T13:56:36.385Z info: Http server started successfully! {}
+2024-07-12T13:56:40.275Z error: stderr: [object Object] {}
+2024-07-12T13:57:35.962Z info: server started successfully! {}
+2024-07-12T13:57:35.965Z info: Http server started successfully! {}
+2024-07-12T14:02:16.682Z info: server started successfully! {}
+2024-07-12T14:02:16.685Z info: Http server started successfully! {}
+2024-07-12T14:02:42.016Z info: server started successfully! {}
+2024-07-12T14:02:42.019Z info: Http server started successfully! {}
+2024-07-12T14:03:39.862Z error: stderr: Error: Command failed: bash /home/devops/test.sh
+/home/devops/test.sh: line 6: echoss: command not found
+ {}
+2024-07-12T14:03:57.079Z info: server started successfully! {}
+2024-07-12T14:03:57.082Z info: Http server started successfully! {}
+2024-07-12T14:04:12.607Z error: err: Error: Command failed: bash /home/devops/test.sh
+/home/devops/test.sh: line 6: echoss: command not found
+ {}
+2024-07-12T14:04:44.507Z info: server started successfully! {}
+2024-07-12T14:04:44.510Z info: Http server started successfully! {}
+2024-07-12T14:05:00.113Z error: err: /home/devops/test.sh: line 6: echoss: command not found
+ {}
+2024-07-12T14:05:37.914Z info: server started successfully! {}
+2024-07-12T14:05:37.917Z info: Http server started successfully! {}
+2024-07-12T14:07:02.898Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unknown command verb 'startus', did you mean 'status'?
+ {}
+2024-07-12T14:17:05.004Z info: server started successfully! {}
+2024-07-12T14:17:05.007Z info: Http server started successfully! {}
+2024-07-12T14:39:33.672Z info: server started successfully! {}
+2024-07-12T14:39:33.675Z info: Http server started successfully! {}
+2024-07-12T14:40:41.031Z info: server started successfully! {}
+2024-07-12T14:40:41.034Z info: Http server started successfully! {}
+2024-07-12T14:42:46.692Z info: server started successfully! {}
+2024-07-12T14:42:46.695Z info: Http server started successfully! {}
+2024-07-12T14:42:58.586Z info: server started successfully! {}
+2024-07-12T14:42:58.589Z info: Http server started successfully! {}
+2024-07-12T14:51:38.848Z info: server started successfully! {}
+2024-07-12T14:51:38.851Z info: Http server started successfully! {}
+2024-07-12T14:52:49.280Z info: server started successfully! {}
+2024-07-12T14:52:49.283Z info: Http server started successfully! {}
+2024-07-12T14:52:53.175Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T14:57:55.195Z info: server started successfully! {}
+2024-07-12T14:57:55.198Z info: Http server started successfully! {}
+2024-07-12T14:59:38.885Z info: server started successfully! {}
+2024-07-12T14:59:38.887Z info: Http server started successfully! {}
+2024-07-12T15:00:01.736Z info: server started successfully! {}
+2024-07-12T15:00:01.739Z info: Http server started successfully! {}
+2024-07-12T15:04:20.399Z info: server started successfully! {}
+2024-07-12T15:04:20.402Z info: Http server started successfully! {}
+2024-07-12T15:06:06.992Z info: server started successfully! {}
+2024-07-12T15:06:06.996Z info: Http server started successfully! {}
+2024-07-12T15:07:16.404Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:08:59.669Z info: server started successfully! {}
+2024-07-12T15:08:59.673Z info: Http server started successfully! {}
+2024-07-12T15:09:54.148Z info: server started successfully! {}
+2024-07-12T15:09:54.151Z info: Http server started successfully! {}
+2024-07-12T15:12:41.448Z info: server started successfully! {}
+2024-07-12T15:12:41.451Z info: Http server started successfully! {}
+2024-07-12T15:14:40.827Z info: server started successfully! {}
+2024-07-12T15:14:40.829Z info: Http server started successfully! {}
+2024-07-12T15:16:17.330Z info: A client connected {}
+2024-07-12T15:16:32.890Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:21:13.313Z info: server started successfully! {}
+2024-07-12T15:21:13.316Z info: Http server started successfully! {}
+2024-07-12T15:21:16.344Z info: A client connected {}
+2024-07-12T15:21:17.409Z info: A client disconnected {}
+2024-07-12T15:21:17.512Z info: A client connected {}
+2024-07-12T15:21:26.221Z info: A client disconnected {}
+2024-07-12T15:21:26.316Z info: A client connected {}
+2024-07-12T15:21:49.302Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:51:21.901Z info: server started successfully! {}
+2024-07-12T15:51:21.904Z info: Http server started successfully! {}
+2024-07-12T15:51:22.881Z info: A client connected {}
+2024-07-12T15:51:24.522Z info: A client disconnected {}
+2024-07-12T15:51:24.626Z info: A client connected {}
+2024-07-12T15:51:32.241Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:51:33.085Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:51:48.223Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:53:04.043Z info: server started successfully! {}
+2024-07-12T15:53:04.046Z info: Http server started successfully! {}
+2024-07-12T15:53:05.613Z info: A client connected {}
+2024-07-12T15:53:06.005Z info: A client disconnected {}
+2024-07-12T15:53:06.106Z info: A client connected {}
+2024-07-12T15:53:11.188Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:55:25.413Z info: server started successfully! {}
+2024-07-12T15:55:25.416Z info: Http server started successfully! {}
+2024-07-12T15:55:27.336Z info: A client connected {}
+2024-07-12T15:55:29.312Z info: A client disconnected {}
+2024-07-12T15:55:29.422Z info: A client connected {}
+2024-07-12T15:55:32.849Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:55:45.407Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+ {}
+2024-07-12T15:57:05.930Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 56min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 548ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T15:57:21.552Z info: A client disconnected {}
+2024-07-12T15:57:21.645Z info: A client connected {}
+2024-07-12T15:57:24.919Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 56min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 549ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T15:59:07.079Z info: server started successfully! {}
+2024-07-12T15:59:07.083Z info: Http server started successfully! {}
+2024-07-12T15:59:07.849Z info: A client connected {}
+2024-07-12T15:59:08.794Z info: A client disconnected {}
+2024-07-12T15:59:08.889Z info: A client connected {}
+2024-07-12T15:59:11.243Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 58min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 554ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T15:59:17.275Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 58min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 555ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T15:59:51.178Z info: server started successfully! {}
+2024-07-12T15:59:51.181Z info: Http server started successfully! {}
+2024-07-12T15:59:52.145Z info: A client connected {}
+2024-07-12T15:59:56.614Z info: A client disconnected {}
+2024-07-12T15:59:56.699Z info: A client connected {}
+2024-07-12T15:59:59.539Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 59min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 557ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:00:01.041Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 59min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 557ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:00:26.055Z info: server started successfully! {}
+2024-07-12T16:00:26.058Z info: Http server started successfully! {}
+2024-07-12T16:00:26.996Z info: A client connected {}
+2024-07-12T16:00:40.764Z info: server started successfully! {}
+2024-07-12T16:00:40.768Z info: Http server started successfully! {}
+2024-07-12T16:00:41.486Z info: A client connected {}
+2024-07-12T16:00:42.796Z info: A client disconnected {}
+2024-07-12T16:00:42.876Z info: A client connected {}
+2024-07-12T16:00:42.964Z info: A client disconnected {}
+2024-07-12T16:00:43.074Z info: A client connected {}
+2024-07-12T16:00:43.269Z info: A client disconnected {}
+2024-07-12T16:00:43.380Z info: A client connected {}
+2024-07-12T16:00:46.142Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 2h 59min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 559ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 464.0K (peak: 2.3M)
+        CPU: 298ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:30:01 devops-HP-Laptop-15-dw3xxx CRON[103467]: pam_unix(cron:session): session closed for user root
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105427]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:04:36.191Z info: server started successfully! {}
+2024-07-12T16:04:36.194Z info: Http server started successfully! {}
+2024-07-12T16:04:37.470Z info: A client connected {}
+2024-07-12T16:04:40.253Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit apache2ss.service could not be found.
+Unit cronss.service could not be found.
+ {}
+2024-07-12T16:04:55.587Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit apache2ss.service could not be found.
+Unit cronss.service could not be found.
+ {}
+2024-07-12T16:06:13.653Z info: server started successfully! {}
+2024-07-12T16:06:13.657Z info: Http server started successfully! {}
+2024-07-12T16:06:15.536Z info: A client connected {}
+2024-07-12T16:06:17.683Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit apache2ss.service could not be found.
+Unit cronss.service could not be found.
+ {}
+2024-07-12T16:07:33.769Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit crons.service could not be found.
+ {}
+2024-07-12T16:07:40.492Z info: server started successfully! {}
+2024-07-12T16:07:40.495Z info: Http server started successfully! {}
+2024-07-12T16:07:41.283Z info: A client connected {}
+2024-07-12T16:07:43.064Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit crons.service could not be found.
+ {}
+2024-07-12T16:08:00.140Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 7min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 580ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 468.0K (peak: 2.3M)
+        CPU: 309ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119179]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:09:11.924Z info: A client disconnected {}
+2024-07-12T16:09:12.013Z info: A client connected {}
+2024-07-12T16:09:16.355Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 8min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 584ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 468.0K (peak: 2.3M)
+        CPU: 310ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119179]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:09:22.704Z info: A client disconnected {}
+2024-07-12T16:09:22.805Z info: A client connected {}
+2024-07-12T16:09:34.214Z error: err: Error: Command failed: bash /home/devops/test.sh
+Unit cronsa.service could not be found.
+ {}
+2024-07-12T16:10:50.449Z info: server started successfully! {}
+2024-07-12T16:10:50.452Z info: Http server started successfully! {}
+2024-07-12T16:10:51.136Z info: A client connected {}
+2024-07-12T16:10:55.544Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 10min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 589ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+ {}
+2024-07-12T16:10:55.546Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 468.0K (peak: 2.3M)
+        CPU: 310ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119179]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:12:08.215Z info: server started successfully! {}
+2024-07-12T16:12:08.218Z info: Http server started successfully! {}
+2024-07-12T16:12:10.350Z info: A client connected {}
+2024-07-12T16:12:12.465Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:12:12.466Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+       Docs: man:cron(8)
+   Main PID: 862 (cron)
+      Tasks: 1 (limit: 18790)
+     Memory: 468.0K (peak: 2.3M)
+        CPU: 310ms
+     CGroup: /system.slice/cron.service
+             └─862 /usr/sbin/cron -f -P
+
+Jul 12 18:35:01 devops-HP-Laptop-15-dw3xxx CRON[105426]: pam_unix(cron:session): session closed for user root
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109341]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:45:01 devops-HP-Laptop-15-dw3xxx CRON[109340]: pam_unix(cron:session): session closed for user root
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113798]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 18:55:01 devops-HP-Laptop-15-dw3xxx CRON[113797]: pam_unix(cron:session): session closed for user root
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119179]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 12 19:05:01 devops-HP-Laptop-15-dw3xxx CRON[119178]: pam_unix(cron:session): session closed for user root
+ {}
+2024-07-12T16:12:12.467Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 11min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 34457 (apache2)
+      Tasks: 55 (limit: 18790)
+     Memory: 6.0M (peak: 6.8M)
+        CPU: 593ms
+     CGroup: /system.slice/apache2.service
+             ├─34457 /usr/sbin/apache2 -k start
+             ├─34459 /usr/sbin/apache2 -k start
+             └─34460 /usr/sbin/apache2 -k start
+
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx apachectl[34456]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jul 12 16:00:51 devops-HP-Laptop-15-dw3xxx systemd[1]: Started apache2.service - The Apache HTTP Server.
+ {}
+2024-07-12T16:12:12.469Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:13:33.780Z info: server started successfully! {}
+2024-07-12T16:13:33.783Z info: Http server started successfully! {}
+2024-07-12T16:13:35.384Z info: A client connected {}
+2024-07-12T16:13:37.417Z info: stdout:  {}
+2024-07-12T16:13:37.418Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+ {}
+2024-07-12T16:13:37.419Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 12min ago
+ {}
+2024-07-12T16:13:37.420Z info: stdout:  {}
+2024-07-12T16:13:56.616Z info: stdout:  {}
+2024-07-12T16:13:56.617Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+ {}
+2024-07-12T16:13:56.618Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 13min ago
+ {}
+2024-07-12T16:13:56.619Z info: stdout:  {}
+2024-07-12T16:14:16.565Z info: server started successfully! {}
+2024-07-12T16:14:16.568Z info: Http server started successfully! {}
+2024-07-12T16:14:17.163Z info: A client connected {}
+2024-07-12T16:14:17.295Z info: A client disconnected {}
+2024-07-12T16:14:17.398Z info: A client connected {}
+2024-07-12T16:14:19.026Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:14:19.028Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 01:26:20 +03; 17h ago
+ {}
+2024-07-12T16:14:19.029Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 16:00:51 +03; 3h 13min ago
+ {}
+2024-07-12T16:14:19.030Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:25:34.689Z info: server started successfully! {}
+2024-07-12T16:25:34.692Z info: Http server started successfully! {}
+2024-07-12T16:25:36.962Z info: A client connected {}
+2024-07-12T16:30:30.631Z info: server started successfully! {}
+2024-07-12T16:30:30.634Z info: Http server started successfully! {}
+2024-07-12T16:30:47.755Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:30:47.757Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:30:47.792Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 3min 19s ago
+ {}
+2024-07-12T16:30:47.793Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 3min 21s ago
+ {}
+2024-07-12T16:30:57.392Z info: A client connected {}
+2024-07-12T16:30:59.318Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:30:59.320Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 3min 31s ago
+ {}
+2024-07-12T16:30:59.322Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 3min 32s ago
+ {}
+2024-07-12T16:30:59.323Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:31:11.123Z info: A client disconnected {}
+2024-07-12T16:31:11.149Z info: A client connected {}
+2024-07-12T16:31:33.089Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:31:33.091Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 4s ago
+ {}
+2024-07-12T16:31:33.092Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 6s ago
+ {}
+2024-07-12T16:31:33.094Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:02.979Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 34s ago
+ {}
+2024-07-12T16:32:02.980Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:02.981Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 36s ago
+ {}
+2024-07-12T16:32:02.983Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:14.544Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:14.545Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 46s ago
+ {}
+2024-07-12T16:32:14.546Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 47s ago
+ {}
+2024-07-12T16:32:14.549Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:15.727Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 47s ago
+ {}
+2024-07-12T16:32:15.728Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:15.729Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 49s ago
+ {}
+2024-07-12T16:32:15.735Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:16.352Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 48s ago
+ {}
+2024-07-12T16:32:16.353Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:16.354Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 49s ago
+ {}
+2024-07-12T16:32:16.361Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:18.704Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 50s ago
+ {}
+2024-07-12T16:32:18.705Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:18.708Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 52s ago
+ {}
+2024-07-12T16:32:18.711Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T16:32:22.402Z info: A client disconnected {}
+2024-07-12T16:32:22.436Z info: A client connected {}
+2024-07-12T16:32:23.775Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 4min 57s ago
+ {}
+2024-07-12T16:32:23.777Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 4min 55s ago
+ {}
+2024-07-12T16:32:23.778Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T16:32:23.779Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T17:40:58.820Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T17:40:58.821Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 1h 13min ago
+ {}
+2024-07-12T17:40:58.821Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 1h 13min ago
+ {}
+2024-07-12T17:40:58.825Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T17:51:00.752Z info: A client disconnected {}
+2024-07-12T17:51:53.222Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T17:51:53.225Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 1h 24min ago
+ {}
+2024-07-12T17:51:53.226Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 1h 24min ago
+ {}
+2024-07-12T17:51:53.227Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T17:56:11.256Z info: server started successfully! {}
+2024-07-12T17:56:11.260Z info: Http server started successfully! {}
+2024-07-12T17:57:08.249Z info: server started successfully! {}
+2024-07-12T17:57:08.252Z info: Http server started successfully! {}
+2024-07-12T18:14:32.688Z info: server started successfully! {}
+2024-07-12T18:14:32.691Z info: Http server started successfully! {}
+2024-07-12T18:20:34.016Z info: A client connected {}
+2024-07-12T18:20:35.504Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T18:20:35.506Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 1h 53min ago
+ {}
+2024-07-12T18:20:35.507Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 1h 53min ago
+ {}
+2024-07-12T18:20:35.509Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T18:20:40.001Z info: A client disconnected {}
+2024-07-12T18:20:40.031Z info: A client connected {}
+2024-07-12T18:20:40.770Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 1h 53min ago
+ {}
+2024-07-12T18:20:40.771Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 1h 53min ago
+ {}
+2024-07-12T18:20:40.772Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T18:20:40.775Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T18:21:00.573Z info: server started successfully! {}
+2024-07-12T18:21:00.578Z info: Http server started successfully! {}
+2024-07-12T18:21:04.581Z info: A client connected {}
+2024-07-12T18:22:11.095Z info: server started successfully! {}
+2024-07-12T18:22:11.099Z info: Http server started successfully! {}
+2024-07-12T18:22:12.467Z info: A client connected {}
+2024-07-12T18:26:13.648Z info: server started successfully! {}
+2024-07-12T18:26:13.651Z info: Http server started successfully! {}
+2024-07-12T18:26:16.382Z info: A client connected {}
+2024-07-12T18:26:22.765Z info: server started successfully! {}
+2024-07-12T18:26:22.771Z info: Http server started successfully! {}
+2024-07-12T18:26:25.705Z info: A client connected {}
+2024-07-12T18:26:41.034Z info: A client disconnected {}
+2024-07-12T18:26:41.074Z info: A client connected {}
+2024-07-12T18:29:05.247Z info: server started successfully! {}
+2024-07-12T18:29:05.249Z info: Http server started successfully! {}
+2024-07-12T18:29:06.457Z info: A client connected {}
+2024-07-12T18:29:12.313Z info: A client disconnected {}
+2024-07-12T18:29:12.354Z info: A client connected {}
+2024-07-12T18:32:10.854Z info: server started successfully! {}
+2024-07-12T18:32:10.857Z info: Http server started successfully! {}
+2024-07-12T18:32:15.068Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T18:32:15.070Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T18:32:15.070Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 2h 4min ago
+ {}
+2024-07-12T18:32:15.071Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 2h 4min ago
+ {}
+2024-07-12T18:32:16.453Z info: A client connected {}
+2024-07-12T18:32:21.328Z info: A client disconnected {}
+2024-07-12T18:32:21.367Z info: A client connected {}
+2024-07-12T18:32:24.543Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T18:32:24.544Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 2h 4min ago
+ {}
+2024-07-12T18:32:24.545Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 2h 4min ago
+ {}
+2024-07-12T18:32:24.546Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T18:32:27.683Z error: err: Error: Command failed: systemctl status redis
+Unit redis.service could not be found.
+ {}
+2024-07-12T18:32:27.684Z info: stdout: ● cron.service - Regular background program processing daemon
+     Loaded: loaded (/usr/lib/systemd/system/cron.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:26 +03; 2h 5min ago
+ {}
+2024-07-12T18:32:27.685Z info: stdout: ● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-07-12 19:27:28 +03; 2h 4min ago
+ {}
+2024-07-12T18:32:27.686Z error: err: Error: Command failed: systemctl status mysql
+Unit mysql.service could not be found.
+ {}
+2024-07-12T18:35:18.205Z info: server started successfully! {}
+2024-07-12T18:35:18.208Z info: Http server started successfully! {}
+2024-07-12T18:35:20.197Z info: A client connected {}
+2024-07-12T18:35:55.365Z info: server started successfully! {}
+2024-07-12T18:35:55.368Z info: Http server started successfully! {}
+2024-07-12T18:35:56.867Z info: A client connected {}
+2024-07-12T18:36:37.923Z info: server started successfully! {}
+2024-07-12T18:36:37.926Z info: Http server started successfully! {}
+2024-07-12T18:36:38.826Z info: A client connected {}
+2024-07-12T18:38:27.184Z info: server started successfully! {}
+2024-07-12T18:38:27.187Z info: Http server started successfully! {}
+2024-07-12T18:38:28.606Z info: A client connected {}
+2024-07-12T18:38:32.073Z info: A client disconnected {}
+2024-07-12T18:38:32.106Z info: A client connected {}
+2024-07-12T18:39:35.732Z info: A client disconnected {}
+2024-07-12T18:39:35.765Z info: A client connected {}
+2024-07-12T18:40:21.023Z info: server started successfully! {}
+2024-07-12T18:40:21.026Z info: Http server started successfully! {}
+2024-07-12T18:40:21.765Z info: A client connected {}
+2024-07-12T18:40:22.583Z info: A client disconnected {}
+2024-07-12T18:40:22.612Z info: A client connected {}
+2024-07-12T18:40:36.261Z info: server started successfully! {}
+2024-07-12T18:40:36.264Z info: Http server started successfully! {}
+2024-07-12T18:40:38.439Z info: A client connected {}
+2024-07-12T18:40:46.571Z info: server started successfully! {}
+2024-07-12T18:40:46.574Z info: Http server started successfully! {}
+2024-07-12T18:40:47.864Z info: A client connected {}
+2024-07-12T18:41:22.745Z info: A client disconnected {}
+2024-07-12T18:41:22.785Z info: A client connected {}
+2024-07-12T18:41:37.097Z info: server started successfully! {}
+2024-07-12T18:41:37.100Z info: Http server started successfully! {}
+2024-07-12T18:41:38.381Z info: A client connected {}
+2024-07-12T18:42:29.147Z info: server started successfully! {}
+2024-07-12T18:42:29.150Z info: Http server started successfully! {}
+2024-07-12T18:42:29.290Z info: A client connected {}
+2024-07-12T18:42:31.463Z info: A client disconnected {}
+2024-07-12T18:42:31.492Z info: A client connected {}
+2024-07-12T18:42:37.382Z info: A client disconnected {}
+2024-07-12T18:42:37.415Z info: A client connected {}
+2024-07-12T18:43:31.224Z info: server started successfully! {}
+2024-07-12T18:43:31.229Z info: Http server started successfully! {}
+2024-07-12T18:43:32.726Z info: A client connected {}
+2024-07-12T18:43:42.882Z info: A client disconnected {}
+2024-07-12T18:43:42.920Z info: A client connected {}
+2024-07-12T18:43:50.009Z info: A client disconnected {}
+2024-07-12T18:43:50.044Z info: A client connected {}
+2024-07-12T18:43:50.154Z info: A client disconnected {}
+2024-07-12T18:43:50.187Z info: A client connected {}
+2024-07-12T18:43:50.320Z info: A client disconnected {}
+2024-07-12T18:43:50.353Z info: A client connected {}
+2024-07-12T18:44:48.750Z info: A client disconnected {}
+2024-07-12T18:44:48.772Z info: A client connected {}
+2024-07-12T18:50:15.496Z info: A client disconnected {}
+2024-07-12T18:50:15.523Z info: A client connected {}
+2024-07-12T18:52:56.232Z info: A client disconnected {}
+2024-07-12T18:52:56.279Z info: A client connected {}
+2024-07-12T18:54:20.242Z info: A client disconnected {}
+2024-07-12T18:54:20.282Z info: A client connected {}
+2024-07-12T18:58:53.426Z info: A client disconnected {}
+2024-07-12T18:58:53.471Z info: A client connected {}
+2024-07-12T18:59:26.178Z info: server started successfully! {}
+2024-07-12T18:59:26.181Z info: Http server started successfully! {}
+2024-07-12T18:59:31.069Z info: A client connected {}
+2024-07-12T19:00:20.013Z info: server started successfully! {}
+2024-07-12T19:00:20.017Z info: Http server started successfully! {}
+2024-07-12T19:00:23.637Z info: A client connected {}
+2024-07-12T19:01:21.809Z info: server started successfully! {}
+2024-07-12T19:01:21.812Z info: Http server started successfully! {}
+2024-07-12T19:01:22.766Z info: A client connected {}
+2024-07-12T19:01:28.277Z info: A client disconnected {}
+2024-07-12T19:02:11.069Z info: server started successfully! {}
+2024-07-12T19:02:11.073Z info: Http server started successfully! {}
+2024-07-12T19:03:09.301Z info: server started successfully! {}
+2024-07-12T19:03:09.304Z info: Http server started successfully! {}
+2024-07-12T19:06:45.312Z info: A client connected {}
+2024-07-12T19:07:16.498Z info: A client disconnected {}
+2024-07-12T19:07:16.583Z info: A client connected {}
+2024-07-12T19:07:53.498Z info: server started successfully! {}
+2024-07-12T19:07:53.501Z info: Http server started successfully! {}
+2024-07-12T19:07:54.570Z info: A client connected {}
+2024-07-12T19:07:55.657Z info: A client disconnected {}
+2024-07-12T19:07:55.732Z info: A client connected {}
+2024-07-12T19:10:49.000Z info: server started successfully! {}
+2024-07-12T19:10:49.003Z info: Http server started successfully! {}
+2024-07-12T19:10:49.426Z info: A client connected {}
+2024-07-12T19:11:01.427Z info: server started successfully! {}
+2024-07-12T19:11:01.431Z info: Http server started successfully! {}
+2024-07-12T19:11:03.899Z info: A client connected {}
+2024-07-12T19:11:05.751Z info: A client disconnected {}
+2024-07-12T19:11:05.841Z info: A client connected {}
+2024-07-12T19:13:21.559Z info: A client disconnected {}
+2024-07-12T19:13:21.655Z info: A client connected {}
+2024-07-12T19:13:35.895Z info: A client disconnected {}
+2024-07-12T19:13:35.970Z info: A client connected {}
+2024-07-12T19:13:51.474Z info: A client disconnected {}
+2024-07-12T19:13:51.550Z info: A client connected {}
+2024-07-12T19:13:55.828Z info: A client disconnected {}
+2024-07-12T19:13:55.904Z info: A client connected {}
+2024-07-12T19:16:27.822Z info: server started successfully! {}
+2024-07-12T19:16:27.825Z info: Http server started successfully! {}
+2024-07-12T19:16:28.511Z info: A client connected {}
+2024-07-12T19:17:46.197Z info: A client disconnected {}
+2024-07-12T19:17:46.272Z info: A client connected {}
+2024-07-12T19:17:47.413Z info: A client disconnected {}
+2024-07-12T19:17:47.489Z info: A client connected {}
+2024-07-12T19:22:40.602Z info: server started successfully! {}
+2024-07-12T19:22:40.605Z info: Http server started successfully! {}
+2024-07-12T19:22:40.959Z info: A client connected {}
+2024-07-12T19:22:59.261Z info: A client disconnected {}
+2024-07-12T19:22:59.328Z info: A client connected {}
+2024-07-12T19:25:26.335Z info: server started successfully! {}
+2024-07-12T19:25:26.339Z info: Http server started successfully! {}
+2024-07-12T19:25:26.761Z info: A client connected {}
+2024-07-12T19:25:33.070Z info: A client disconnected {}
+2024-07-12T19:25:33.145Z info: A client connected {}
+2024-07-12T19:27:26.597Z info: server started successfully! {}
+2024-07-12T19:27:26.600Z info: Http server started successfully! {}
+2024-07-12T19:27:27.034Z info: A client connected {}
+2024-07-12T19:28:28.681Z info: server started successfully! {}
+2024-07-12T19:28:28.684Z info: Http server started successfully! {}
+2024-07-12T19:28:29.006Z info: A client connected {}
+2024-07-12T19:28:31.869Z info: A client disconnected {}
+2024-07-12T19:28:31.957Z info: A client connected {}
+2024-07-12T19:28:42.589Z info: A client disconnected {}
+2024-07-12T19:28:42.685Z info: A client connected {}
+2024-07-12T19:28:42.779Z info: A client disconnected {}
+2024-07-12T19:28:42.851Z info: A client connected {}
+2024-07-12T19:28:43.165Z info: A client disconnected {}
+2024-07-12T19:28:43.234Z info: A client connected {}
+2024-07-12T19:28:43.304Z info: A client disconnected {}
+2024-07-12T19:28:43.377Z info: A client connected {}
+2024-07-12T19:28:43.479Z info: A client disconnected {}
+2024-07-12T19:28:43.562Z info: A client connected {}
+2024-07-12T19:28:43.641Z info: A client disconnected {}
+2024-07-12T19:28:43.709Z info: A client connected {}
+2024-07-12T19:28:43.792Z info: A client disconnected {}
+2024-07-12T19:28:43.863Z info: A client connected {}
+2024-07-12T19:28:43.978Z info: A client disconnected {}
+2024-07-12T19:28:44.060Z info: A client connected {}
+2024-07-12T19:29:02.135Z info: server started successfully! {}
+2024-07-12T19:29:02.138Z info: Http server started successfully! {}
+2024-07-12T19:29:02.262Z info: A client connected {}
+2024-07-12T19:29:46.419Z info: server started successfully! {}
+2024-07-12T19:29:46.422Z info: Http server started successfully! {}
+2024-07-12T19:29:47.599Z info: A client connected {}
+2024-07-12T19:29:48.523Z info: A client disconnected {}
+2024-07-12T19:29:48.619Z info: A client connected {}
+2024-07-12T19:30:48.945Z info: server started successfully! {}
+2024-07-12T19:30:48.948Z info: Http server started successfully! {}
+2024-07-12T19:30:49.067Z info: A client connected {}
+2024-07-12T19:30:49.106Z info: A client disconnected {}
+2024-07-12T19:30:49.192Z info: A client connected {}
+2024-07-12T19:30:49.268Z info: A client disconnected {}
+2024-07-12T19:30:49.348Z info: A client connected {}
+2024-07-12T19:30:49.451Z info: A client disconnected {}
+2024-07-12T19:30:49.528Z info: A client connected {}
+2024-07-12T19:30:49.628Z info: A client disconnected {}
+2024-07-12T19:30:49.699Z info: A client connected {}
+2024-07-12T19:30:51.193Z info: A client disconnected {}
+2024-07-12T19:30:51.271Z info: A client connected {}
+2024-07-12T19:30:55.265Z info: A client disconnected {}
+2024-07-12T19:30:55.349Z info: A client connected {}
+2024-07-12T19:31:27.862Z info: A client disconnected {}
+2024-07-12T19:31:27.968Z info: A client connected {}
+2024-07-12T19:31:38.539Z info: A client disconnected {}
+2024-07-12T19:31:38.718Z info: A client connected {}
+2024-07-12T19:31:46.678Z info: A client disconnected {}
+2024-07-12T19:31:46.800Z info: A client connected {}
+2024-07-12T19:32:55.885Z info: server started successfully! {}
+2024-07-12T19:32:55.889Z info: Http server started successfully! {}
+2024-07-12T19:32:56.490Z info: A client connected {}
+2024-07-12T19:32:59.924Z info: A client disconnected {}
+2024-07-12T19:33:00.011Z info: A client connected {}
+2024-07-12T19:35:29.385Z info: server started successfully! {}
+2024-07-12T19:35:29.388Z info: Http server started successfully! {}
+2024-07-12T19:35:29.614Z info: A client connected {}
+2024-07-12T19:36:04.463Z info: server started successfully! {}
+2024-07-12T19:36:04.466Z info: Http server started successfully! {}
+2024-07-12T19:36:10.741Z info: A client connected {}
+2024-07-12T19:36:11.415Z info: A client disconnected {}
+2024-07-12T19:36:11.487Z info: A client connected {}
+2024-07-12T19:40:19.537Z info: A client disconnected {}
+2024-07-12T19:40:19.603Z info: A client connected {}
+2024-07-12T19:40:29.707Z info: A client disconnected {}
+2024-07-12T19:40:29.749Z info: A client connected {}
+2024-07-12T19:40:30.331Z info: A client disconnected {}
+2024-07-12T19:40:30.369Z info: A client connected {}
+2024-07-12T19:40:43.895Z info: A client disconnected {}
+2024-07-12T19:40:43.933Z info: A client connected {}
+2024-07-12T19:40:44.027Z info: A client disconnected {}
+2024-07-12T19:40:44.060Z info: A client connected {}
+2024-07-12T19:40:44.221Z info: A client disconnected {}
+2024-07-12T19:40:44.260Z info: A client connected {}
+2024-07-12T19:41:05.728Z info: A client disconnected {}
+2024-07-12T19:41:05.768Z info: A client connected {}
+2024-07-12T19:41:17.745Z info: server started successfully! {}
+2024-07-12T19:41:17.749Z info: Http server started successfully! {}
+2024-07-12T19:41:19.003Z info: A client connected {}
+2024-07-12T19:41:47.215Z info: A client disconnected {}
+2024-07-12T19:41:47.245Z info: A client connected {}
+2024-07-12T19:42:20.551Z info: A client disconnected {}
+2024-07-12T19:42:20.596Z info: A client connected {}
+2024-07-12T19:43:05.860Z info: A client disconnected {}
+2024-07-12T19:43:05.894Z info: A client connected {}
+2024-07-12T19:43:23.385Z info: server started successfully! {}
+2024-07-12T19:43:23.388Z info: Http server started successfully! {}
+2024-07-12T19:43:23.420Z info: A client connected {}
+2024-07-12T19:55:29.360Z info: server started successfully! {}
+2024-07-12T19:55:29.364Z info: Http server started successfully! {}
+2024-07-12T19:55:29.901Z info: A client connected {}
+2024-07-12T19:55:40.770Z info: A client disconnected {}
+2024-07-12T19:55:40.807Z info: A client connected {}
+2024-07-12T19:55:56.722Z info: A client disconnected {}
+2024-07-12T19:58:45.885Z info: server started successfully! {}
+2024-07-12T19:58:45.888Z info: Http server started successfully! {}
+2024-07-12T20:01:11.527Z info: server started successfully! {}
+2024-07-12T20:01:11.530Z info: Http server started successfully! {}
+2024-07-12T20:01:34.622Z info: server started successfully! {}
+2024-07-12T20:01:34.625Z info: Http server started successfully! {}
+2024-07-12T20:02:24.199Z info: server started successfully! {}
+2024-07-12T20:02:24.202Z info: Http server started successfully! {}
+2024-07-12T20:02:37.059Z info: server started successfully! {}
+2024-07-12T20:02:37.062Z info: Http server started successfully! {}
+2024-07-12T20:03:15.009Z info: server started successfully! {}
+2024-07-12T20:03:15.013Z info: Http server started successfully! {}
+2024-07-12T20:04:21.311Z info: server started successfully! {}
+2024-07-12T20:04:21.314Z info: Http server started successfully! {}
+2024-07-12T20:06:27.706Z info: server started successfully! {}
+2024-07-12T20:06:27.709Z info: Http server started successfully! {}
+2024-07-12T20:06:32.746Z info: server started successfully! {}
+2024-07-12T20:06:32.749Z info: Http server started successfully! {}
+2024-07-12T20:06:35.529Z info: server started successfully! {}
+2024-07-12T20:06:35.532Z info: Http server started successfully! {}
+2024-07-12T20:09:24.642Z info: server started successfully! {}
+2024-07-12T20:09:24.646Z info: Http server started successfully! {}
+2024-07-12T20:09:32.093Z info: A client connected {}
+2024-07-12T20:10:58.938Z info: A client disconnected {}
+2024-07-12T20:10:58.969Z info: A client connected {}
+2024-07-12T20:11:13.893Z info: server started successfully! {}
+2024-07-12T20:11:13.896Z info: Http server started successfully! {}
+2024-07-12T20:11:14.473Z info: A client connected {}
+2024-07-12T20:12:14.137Z info: server started successfully! {}
+2024-07-12T20:12:14.141Z info: Http server started successfully! {}
+2024-07-12T20:12:16.483Z info: A client connected {}
+2024-07-12T20:12:32.237Z info: A client disconnected {}
+2024-07-12T20:12:32.279Z info: A client connected {}
+2024-07-12T20:15:18.852Z info: server started successfully! {}
+2024-07-12T20:15:18.855Z info: Http server started successfully! {}
+2024-07-12T20:15:21.139Z info: A client connected {}
+2024-07-12T20:15:22.636Z info: A client disconnected {}
+2024-07-12T20:15:22.663Z info: A client connected {}
+2024-07-12T20:15:33.392Z info: A client disconnected {}
+2024-07-12T20:15:33.423Z info: A client connected {}
+2024-07-12T20:15:44.466Z info: server started successfully! {}
+2024-07-12T20:15:44.469Z info: Http server started successfully! {}
+2024-07-12T20:15:45.915Z info: A client connected {}
+2024-07-12T20:16:32.505Z info: server started successfully! {}
+2024-07-12T20:16:32.508Z info: Http server started successfully! {}
+2024-07-12T20:16:33.567Z info: A client connected {}
+2024-07-12T20:16:50.731Z info: server started successfully! {}
+2024-07-12T20:16:50.734Z info: Http server started successfully! {}
+2024-07-12T20:16:52.026Z info: A client connected {}
+2024-07-12T20:20:05.105Z info: server started successfully! {}
+2024-07-12T20:20:05.108Z info: Http server started successfully! {}
+2024-07-12T20:20:06.339Z info: A client connected {}
+2024-07-12T20:20:27.637Z info: server started successfully! {}
+2024-07-12T20:20:27.640Z info: Http server started successfully! {}
+2024-07-12T20:20:27.719Z info: A client connected {}
+2024-07-12T20:21:14.641Z info: A client disconnected {}
+2024-07-12T20:21:14.673Z info: A client connected {}
+2024-07-12T20:29:30.237Z info: server started successfully! {}
+2024-07-12T20:29:30.240Z info: Http server started successfully! {}
+2024-07-12T20:29:32.114Z info: A client connected {}
+2024-07-12T20:29:32.936Z info: A client disconnected {}
+2024-07-12T20:29:32.969Z info: A client connected {}
+2024-07-12T20:30:09.097Z info: server started successfully! {}
+2024-07-12T20:30:09.100Z info: Http server started successfully! {}
+2024-07-12T20:30:10.683Z info: A client connected {}
+2024-07-12T20:30:13.474Z info: A client disconnected {}
+2024-07-12T20:30:13.511Z info: A client connected {}
+2024-07-12T20:30:36.610Z info: A client disconnected {}
+2024-07-12T20:30:36.640Z info: A client connected {}
+2024-07-12T20:31:36.226Z info: server started successfully! {}
+2024-07-12T20:31:36.229Z info: Http server started successfully! {}
+2024-07-12T20:31:37.129Z info: A client connected {}
+2024-07-12T20:32:17.638Z info: server started successfully! {}
+2024-07-12T20:32:17.641Z info: Http server started successfully! {}
+2024-07-12T20:32:19.024Z info: A client connected {}
+2024-07-12T20:32:29.161Z info: server started successfully! {}
+2024-07-12T20:32:29.164Z info: Http server started successfully! {}
+2024-07-12T20:32:30.482Z info: A client connected {}
+2024-07-12T20:32:30.558Z info: A client disconnected {}
+2024-07-12T20:32:30.624Z info: A client connected {}
+2024-07-12T20:32:47.663Z info: server started successfully! {}
+2024-07-12T20:32:47.666Z info: Http server started successfully! {}
+2024-07-12T20:32:47.766Z info: A client connected {}
+2024-07-12T20:33:37.759Z info: server started successfully! {}
+2024-07-12T20:33:37.762Z info: Http server started successfully! {}
+2024-07-12T20:33:37.836Z info: A client connected {}
+2024-07-12T20:40:31.638Z info: A client disconnected {}
+2024-07-12T20:40:31.675Z info: A client connected {}
+2024-07-12T20:46:43.093Z info: server started successfully! {}
+2024-07-12T20:46:43.097Z info: Http server started successfully! {}
+2024-07-12T20:46:45.926Z info: A client connected {}
+2024-07-12T20:46:48.979Z info: A client disconnected {}
+2024-07-12T20:46:49.017Z info: A client connected {}
+2024-07-12T20:49:24.800Z info: server started successfully! {}
+2024-07-12T20:49:24.803Z info: Http server started successfully! {}
+2024-07-12T20:49:27.035Z info: A client connected {}
+2024-07-12T20:49:37.717Z info: server started successfully! {}
+2024-07-12T20:49:37.721Z info: Http server started successfully! {}
+2024-07-12T20:49:38.649Z info: A client connected {}
+2024-07-12T20:49:47.145Z info: A client disconnected {}
+2024-07-12T20:49:47.180Z info: A client connected {}
+2024-07-12T20:53:29.109Z info: A client disconnected {}
+2024-07-12T20:53:29.142Z info: A client connected {}
+2024-07-12T20:55:45.560Z info: server started successfully! {}
+2024-07-12T20:55:45.564Z info: Http server started successfully! {}
+2024-07-12T20:55:48.573Z info: A client connected {}
+2024-07-12T20:56:14.229Z info: server started successfully! {}
+2024-07-12T20:56:14.232Z info: Http server started successfully! {}
+2024-07-12T20:56:17.070Z info: A client connected {}
+2024-07-12T20:56:37.385Z info: A client disconnected {}
+2024-07-12T20:56:37.417Z info: A client connected {}
+2024-07-12T20:59:27.914Z info: server started successfully! {}
+2024-07-12T20:59:27.917Z info: Http server started successfully! {}
