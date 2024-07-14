@@ -16,7 +16,7 @@ function checkServices() {
 function showRunningPorts() {
     axios.get('/api/check-ports')
         .then(response => {
-            // document.getElementById('messages').innerHTML = JSON.stringify(response.data, null, 2);
+            document.getElementById('messages').innerHTML = JSON.stringify(response.data, null, 2);
         })
         .catch(error => {
             document.getElementById('messages').innerHTML = 'Error showing running ports: ' + error;

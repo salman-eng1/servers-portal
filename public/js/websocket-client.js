@@ -9,20 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log('Disconnected from WebSocket server');
     });
 
-    socket.on('checkServices', (message) => {
-        console.log('Received message from server:', message);
-        const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines with <br> tags for HTML rendering
-        const messagesDiv = document.getElementById('messages');
-        messagesDiv.innerHTML += `<p>${formattedMessage}</p>`;
-    });
-
-    socket.on('checkServicesError', (message) => {
-        console.log('Received message from server:', message);
-        const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines with <br> tags for HTML rendering
-        const messagesDiv = document.getElementById('messages');
-        messagesDiv.innerHTML += `<p>${formattedMessage}</p>`;
-    });
-    socket.on('checkPorts', (message) => {
+    socket.on('terminal', (message) => {
         console.log('Received message from server:', message);
         const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines with <br> tags for HTML rendering
         const messagesDiv = document.getElementById('messages');
