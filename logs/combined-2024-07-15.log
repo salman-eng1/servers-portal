@@ -1,0 +1,68 @@
+2024-07-15T19:11:11.403Z info: server started successfully! {}
+2024-07-15T19:11:11.406Z info: Http server started successfully! {}
+2024-07-15T19:11:12.252Z info: A client connected {}
+2024-07-15T19:19:41.001Z info: server started successfully! {}
+2024-07-15T19:19:41.004Z info: Http server started successfully! {}
+2024-07-15T19:19:43.988Z info: A client connected {}
+2024-07-15T19:29:19.176Z info: server started successfully! {}
+2024-07-15T19:29:19.179Z info: Http server started successfully! {}
+2024-07-15T19:29:22.169Z info: A client connected {}
+2024-07-15T19:29:49.965Z info: A client disconnected {}
+2024-07-15T19:29:50.016Z info: A client connected {}
+2024-07-15T19:33:11.242Z info: server started successfully! {}
+2024-07-15T19:33:11.245Z info: Http server started successfully! {}
+2024-07-15T19:33:13.899Z info: A client connected {}
+2024-07-15T19:33:18.449Z error: Failed to retrieve projects {}
+2024-07-15T19:33:34.574Z info: server started successfully! {}
+2024-07-15T19:33:34.578Z info: Http server started successfully! {}
+2024-07-15T19:33:36.151Z info: A client connected {}
+2024-07-15T19:33:41.351Z error: Failed to retrieve projects {}
+2024-07-15T19:34:12.154Z info: server started successfully! {}
+2024-07-15T19:34:12.157Z info: Http server started successfully! {}
+2024-07-15T19:34:13.844Z info: A client connected {}
+2024-07-15T19:34:19.155Z error: Failed to retrieve projects {}
+2024-07-15T19:34:46.930Z info: server started successfully! {}
+2024-07-15T19:34:46.933Z info: Http server started successfully! {}
+2024-07-15T19:34:48.373Z info: A client connected {}
+2024-07-15T19:36:03.857Z info: server started successfully! {}
+2024-07-15T19:36:03.860Z info: Http server started successfully! {}
+2024-07-15T19:36:04.960Z info: A client connected {}
+2024-07-15T19:36:13.639Z info: A client disconnected {}
+2024-07-15T19:36:13.683Z info: A client connected {}
+2024-07-15T19:36:33.932Z info: server started successfully! {}
+2024-07-15T19:36:33.935Z info: Http server started successfully! {}
+2024-07-15T19:36:35.428Z info: A client connected {}
+2024-07-15T19:37:24.215Z info: server started successfully! {}
+2024-07-15T19:37:24.218Z info: Http server started successfully! {}
+2024-07-15T19:37:25.842Z info: A client connected {}
+2024-07-15T19:37:38.679Z info: server started successfully! {}
+2024-07-15T19:37:38.682Z info: Http server started successfully! {}
+2024-07-15T19:37:41.145Z info: A client connected {}
+2024-07-15T19:39:03.897Z error: project display is not available at /var/www/QMS {}
+2024-07-15T19:43:23.397Z info: server started successfully! {}
+2024-07-15T19:43:23.400Z info: Http server started successfully! {}
+2024-07-15T19:43:23.843Z info: A client connected {}
+2024-07-15T19:43:34.498Z info: server started successfully! {}
+2024-07-15T19:43:34.501Z info: Http server started successfully! {}
+2024-07-15T19:43:35.263Z info: A client connected {}
+2024-07-15T19:43:36.254Z error: project display is not available at /var/www/QMS {}
+2024-07-15T19:43:38.311Z error: project display is not available at /var/www/QMS {}
+2024-07-15T19:56:08.045Z info: server started successfully! {}
+2024-07-15T19:56:08.048Z info: Http server started successfully! {}
+2024-07-15T19:56:12.312Z error: Project display is not available at /var/www/QMS {}
+2024-07-15T19:56:13.692Z info: A client connected {}
+2024-07-15T19:56:28.024Z error: Project informa is not available at /var/www/QMS {}
+2024-07-15T19:56:28.025Z error: Project display is not available at /var/www/QMS {}
+2024-07-15T19:56:47.595Z info: server started successfully! {}
+2024-07-15T19:56:47.598Z info: Http server started successfully! {}
+2024-07-15T19:56:50.587Z info: A client connected {}
+2024-07-15T19:56:51.951Z error: Project informa is not available at /var/www/QMS {}
+2024-07-15T19:56:51.952Z error: Project display is not available at /var/www/QMS {}
+2024-07-15T19:57:19.141Z info: server started successfully! {}
+2024-07-15T19:57:19.144Z info: Http server started successfully! {}
+2024-07-15T19:57:20.269Z error: Project informa is not available at /var/www/QMS {}
+2024-07-15T19:57:20.269Z error: Project display is not available at /var/www/QMS {}
+2024-07-15T19:57:21.854Z info: A client connected {}
+2024-07-15T19:57:45.531Z info: server started successfully! {}
+2024-07-15T19:57:45.534Z info: Http server started successfully! {}
+2024-07-15T19:57:48.473Z info: A client connected {}
