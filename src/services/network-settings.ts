@@ -41,7 +41,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
 
     netplanData.network.ethernets.eth0.dhcp4 = false;
     netplanData.network.ethernets.eth0.addresses = [`${newIP}/${newMask}`];
-    netplanData.network.ethernets.eth0.nameservers.addresses = [`${dns}`];
+    netplanData.network.ethernets.eth0.nameservers.addresses = dns;
 
 
     // Write the modified configuration back to the file
