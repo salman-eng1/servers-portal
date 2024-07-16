@@ -1,10 +1,10 @@
 import { Application, json, urlencoded } from 'express';
-import cookieSession from 'cookie-session';
-import hpp from 'hpp';
-import helmet from 'helmet';
+// import cookieSession from 'cookie-session';
+// import hpp from 'hpp';
+// import helmet from 'helmet';
 import compression from 'compression';
 import http from 'http';
-import { config } from '@portal/config';
+// import { config } from '@portal/config';
 import { appRoutes } from '@portal/routes';
 import { ApiError } from "@portal/utils/api-error";
 import { logger } from '@portal/utils/logging';
@@ -21,29 +21,29 @@ export class PortalServer {
     }
 
     public start(): void {
-        this.securityMiddleware(this.app);
+        // this.securityMiddleware(this.app);
         this.standardMiddleware(this.app);
         this.routesMiddleware(this.app);
         // this.errorHandler(this.app);
         this.startServer(this.app);
     }
 
-    private securityMiddleware(app: Application): void {
-        app.set('trust proxy', 1);
-        app.use(
-            cookieSession({
-                name: 'session',
-                keys: [`${config.SECRET_KEY_ONE}`, `${config.SECRET_KEY_TWO}`],
-                maxAge: 24 * 7 * 3600000,
-                secure: config.NODE_ENV !== 'development',
-                ...(config.NODE_ENV !== 'development' && {
-                    sameSite: 'none'
-                })
-            })
-        );
-        app.use(hpp());
-        app.use(helmet());
-    }
+    // private securityMiddleware(app: Application): void {
+    //     app.set('trust proxy', 1);
+    //     app.use(
+    //         cookieSession({
+    //             name: 'session',
+    //             keys: [`${config.SECRET_KEY_ONE}`, `${config.SECRET_KEY_TWO}`],
+    //             maxAge: 24 * 7 * 3600000,
+    //             secure: config.NODE_ENV !== 'development',
+    //             ...(config.NODE_ENV !== 'development' && {
+    //                 sameSite: 'none'
+    //             })
+    //         })
+    //     );
+    //     app.use(hpp());
+    //     app.use(helmet());
+    // }
 
     private standardMiddleware(app: Application): void {
         app.use(compression());
