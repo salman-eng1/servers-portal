@@ -1,12 +1,12 @@
 import { readFile, writeFile } from 'fs';
 import { promisify } from 'util';
 import YAML from 'yaml';
-// import { exec } from 'child_process';
+import { exec } from 'child_process';
 
 // Promisify the readFile, writeFile, and exec functions
 const readFilePromise = promisify(readFile);
 const writeFilePromise = promisify(writeFile);
-// const execPromise = promisify(exec);
+const execPromise = promisify(exec);
 
 // Define the NetplanConfig type based on the structure of your netplan YAML configuration
 interface NetplanConfig {
@@ -44,11 +44,12 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     netplanData.network.ethernets.eth0.nameservers.addresses = dns;
 
 
+
     // Write the modified configuration back to the file
     const updatedNetplanConfig = YAML.stringify(netplanData);
     await writeFilePromise(netplanFilePath, updatedNetplanConfig);
 
     // Apply the changes
-    // await execPromise('netplan apply');
+    await execPromise('netplan apply');
  
 };
