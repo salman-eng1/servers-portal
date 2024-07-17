@@ -3,6 +3,8 @@ import { promisify } from 'util';
 import YAML from 'yaml';
 import { exec } from 'child_process';
 
+
+
 // Promisify the readFile, writeFile, and exec functions
 const readFilePromise = promisify(readFile);
 const writeFilePromise = promisify(writeFile);
@@ -34,6 +36,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const netplanConfig = await readFilePromise(netplanFilePath, 'utf8');
     const netplanData: NetplanConfig = YAML.parse(netplanConfig);
 
+    const currentIP = netplanData.network.ethernets.eth0.addresses ? netplanData.network.ethernets.eth0.addresses[0] : 'Not Assigned';
     // Backup the existing netplan configuration
     await writeFilePromise(netplanBackupFilePath, netplanConfig);
 
@@ -48,8 +51,12 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     // Write the modified configuration back to the file
     const updatedNetplanConfig = YAML.stringify(netplanData);
     await writeFilePromise(netplanFilePath, updatedNetplanConfig);
-
+    await execPromise(`bash /home/zeuor/script/changeEnvIP.sh ${currentIP} ${newIP}`)
     // Apply the changes
-    await execPromise('netplan apply');
+    // await execPromise('netplan apply');
  
 };
+
+
+
+
