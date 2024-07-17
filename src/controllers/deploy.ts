@@ -69,7 +69,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
   try {
 
     await execute(`sed -i '/^Listen/d' /etc/apache2/ports.conf`, 'terminal');
-    await execute(`a2dissite /etc/apache2/sites-available/*`, 'terminal');
+    await execute(`cd /etc/apache2/sites-available && a2dissite *`, 'terminal');
     await execute(`rm /etc/apache2/sites-available/*`, 'terminal');
 
     const availableProjects = await systemProjects(systemName);
@@ -106,7 +106,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
           await migrate(systemName, element.projectName);
         }
         await execute(`echo Listen ${element.port}  >> /etc/apache2/ports.conf`, 'terminal');
-configContent = `
+        configContent = `
     <VirtualHost *:${element.port}>
         DocumentRoot /var/www/${systemName}/${element.projectName}/public
         <Directory /var/www/${systemName}/${element.projectName}>
@@ -118,13 +118,13 @@ configContent = `
         CustomLog \${APACHE_LOG_DIR}/${element.projectName}_access.log combined
     </VirtualHost>
     `;
-filePath=`/etc/apache2/sites-available/${element.projectName}.conf`
-createFile(configContent,filePath)
+        filePath = `/etc/apache2/sites-available/${element.projectName}.conf`
+        createFile(configContent, filePath)
       }
     }
 
     if (unavailableProjects.length === 0) {
-      await execute(`a2ensite /etc/apache2/sites-available/*`, 'terminal');
+      await execute(`cd /etc/apache2/sites-available && a2ensite *`, 'terminal');
 
       res.status(StatusCodes.OK).json({ message: 'Setup successful. All projects are available.' });
     } else {
