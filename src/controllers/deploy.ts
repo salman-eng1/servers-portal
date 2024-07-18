@@ -50,7 +50,7 @@ export const getEnabledProjects = async (_req: Request, res: Response): Promise<
 };
 
 export const setupProject = async (req: Request, res: Response): Promise<void> => {
-  const currentIP = execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
+  const currentIP = await execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
   const systemName: string = req.body.systemName;
   const projects: {
     projectName: string,
@@ -120,6 +120,8 @@ if(req.body.systemName=='QMS'){
   await execute(`sed -i "/^MSA_URL=http:\/\/.*/s/.*/MSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
   await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}}:${element.port}}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
   await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/cron*.sh"`, 'terminal');
+  await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/reset.sh"`, 'terminal');
+
 
   }else if(element.projectName=='ems'){
   
@@ -142,6 +144,8 @@ if(req.body.systemName=='QMS'){
   
 }
 }
+await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
+
         configContent = `
     <VirtualHost *:${element.port}>
         DocumentRoot /var/www/${systemName}/${element.projectName}/public
@@ -163,7 +167,7 @@ if(req.body.systemName=='QMS'){
       await execute(`cd /etc/apache2/sites-available && a2ensite *`, 'terminal');
       await execute(`systemctl reload apache2 *`, 'terminal');
 
-      res.set('Cache-Control', 'public, max-age=120'); // 1 hour TTL
+      res.set('Cache-Control', 'public, max-age=300'); // 1 hour TTL
       res.status(StatusCodes.OK).json({ message: 'Setup successful. All projects are available.' });
     } else {
       res.status(StatusCodes.OK).json({ message: `Please add projects [${unavailableProjects}] to /var/www` });
