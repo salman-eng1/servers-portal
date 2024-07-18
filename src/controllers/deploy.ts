@@ -50,6 +50,7 @@ export const getEnabledProjects = async (_req: Request, res: Response): Promise<
 };
 
 export const setupProject = async (req: Request, res: Response): Promise<void> => {
+  const currentIP = execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
   const systemName: string = req.body.systemName;
   const projects: {
     projectName: string,
@@ -71,6 +72,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
     await execute(`sed -i '/^Listen/d' /etc/apache2/ports.conf`, 'terminal');
     await execute(`cd /etc/apache2/sites-available && a2dissite *`, 'terminal');
     await execute(`rm /etc/apache2/sites-available/*`, 'terminal');
+    await execute(`  composer config --global --auth http-basic.zeour.repo.repman.io token 882348531a5bbe88761dbb26c1d1ffa9a8c4ff518e4f3111e4b160f26f6927ed  `, 'terminal');
 
     const availableProjects = await systemProjects(systemName);
     let configContent = ``;
@@ -92,6 +94,8 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
           // Install composer
           await execute(`rm -r /var/www/${systemName}/${element.projectName}/vendor`, 'terminal');
           await execute(`cd /var/www/${systemName}/${element.projectName} && composer install`, 'terminal');
+          await execute(`cd /var/www/${systemName}/${element.projectName} && composer dump-autoload`, 'terminal');
+
         }
         if (element.composerUpdate) {
           // Update composer
@@ -105,7 +109,39 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
           // Migrate project
           await migrate(systemName, element.projectName);
         }
-        await execute(`echo Listen ${element.port}  >> /etc/apache2/ports.conf`, 'terminal');
+
+if (req.body.isHttp){
+
+}else{
+  await execute(`echo Listen ${element.port}  >> /etc/apache2/ports.conf`, 'terminal');
+  await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
+if(req.body.systemName=='QMS'){
+  if(element.projectName=='msa'){
+  await execute(`sed -i "/^MSA_URL=http:\/\/.*/s/.*/MSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+  await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}}:${element.port}}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
+  await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/cron*.sh"`, 'terminal');
+
+  }else if(element.projectName=='ems'){
+  
+    await execute(`sed -i "/^EMS_URL=http:\/\/.*/s/.*/EMS_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+    await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/cronincb.sh"`, 'terminal');
+
+  }else if(element.projectName=='csa'){
+    await execute(`sed -i "/^CSA_URL=http:\/\/.*/s/.*/CSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+
+  }else if(element.projectName=='display'){
+    await execute(`sed -i "/^DSA_URL=http:\/\/.*/s/.*/DSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+  
+    }else if(element.projectName=='keypad'){
+    await execute(`sed -i "/^keypad_URL=http:\/\/.*/s/.*/keypad_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+  }else if(element.projectName=='MobileWCSA'){
+    await execute(`sed -i "/^MOBILE_URL=http:\/\/.*/s/.*/MOBILE_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
+  }  
+
+  
+  
+}
+}
         configContent = `
     <VirtualHost *:${element.port}>
         DocumentRoot /var/www/${systemName}/${element.projectName}/public
@@ -125,7 +161,9 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
 
     if (unavailableProjects.length === 0) {
       await execute(`cd /etc/apache2/sites-available && a2ensite *`, 'terminal');
+      await execute(`systemctl reload apache2 *`, 'terminal');
 
+      res.set('Cache-Control', 'public, max-age=120'); // 1 hour TTL
       res.status(StatusCodes.OK).json({ message: 'Setup successful. All projects are available.' });
     } else {
       res.status(StatusCodes.OK).json({ message: `Please add projects [${unavailableProjects}] to /var/www` });
