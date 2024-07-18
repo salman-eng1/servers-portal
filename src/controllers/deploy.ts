@@ -68,7 +68,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
 
   try {
     const currentIP = await execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
-
+console.log(currentIP, currentIP)
     await execute(`sed -i '/^Listen/d' /etc/apache2/ports.conf`, 'terminal');
     await execute(`cd /etc/apache2/sites-available && a2dissite *`, 'terminal');
     await execute(`rm /etc/apache2/sites-available/*`, 'terminal');
@@ -114,7 +114,6 @@ if (req.body.isHttp){
 
 }else{
   await execute(`echo Listen ${element.port}  >> /etc/apache2/ports.conf`, 'terminal');
-  console.log(currentIP,currentIP)
   await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
 if(req.body.systemName=='QMS'){
   if(element.projectName=='msa'){
