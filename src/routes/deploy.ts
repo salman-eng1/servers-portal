@@ -1,4 +1,6 @@
-import { getSystems,getSystemProjects, getEnabledProjects,setupProject } from '@portal/controllers/deploy';
+import { getSystems,getSystemProjects, getEnabledProjects } from '@portal/controllers/deploy';
+import { setupProject } from '@portal/controllers/deploy2';
+
 
 import express, {Router} from 'express'
 

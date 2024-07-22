@@ -5,13 +5,6 @@ import { logger } from "@portal/utils/logging";
 import { Request, Response } from "express"
 import { StatusCodes } from "http-status-codes";
 
-
-// export const getApacheProjects=async (_req: Request, res: Response): Promise<void>=>{
-// const projects= await execute("ls -l /var/www | awk '{print $9}'", 'terminal')
-// console.log(projects)
-// res.status(StatusCodes.OK).json({ message: projects });
-// }
-
 export const getSystems = async (_req: Request, res: Response): Promise<void> => {
   try {
     const projects = await execute("ls -l /var/www | grep '^d' | awk '{print $9}'", '');
@@ -36,8 +29,6 @@ export const getSystemProjects = async (req: Request, res: Response): Promise<vo
   }
 };
 
-
-
 export const getEnabledProjects = async (_req: Request, res: Response): Promise<void> => {
   try {
     const projects = await execute("ls -l /etc/apache2/sites-enabled | awk '{print $9}'", '');
@@ -48,6 +39,7 @@ export const getEnabledProjects = async (_req: Request, res: Response): Promise<
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to retrieve enabled projects' });
   }
 };
+
 
 export const setupProject = async (req: Request, res: Response): Promise<void> => {
   const systemName: string = req.body.systemName;
@@ -67,12 +59,13 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
   let unavailableProjects: string[] = [];
 
   try {
-    const currentIP = await execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
-console.log(currentIP, currentIP)
+    const currentIP = (await execute("ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1", 'terminal')).trim();
+    console.log(currentIP, currentIP);
+
     await execute(`sed -i '/^Listen/d' /etc/apache2/ports.conf`, 'terminal');
     await execute(`cd /etc/apache2/sites-available && a2dissite *`, 'terminal');
     await execute(`rm /etc/apache2/sites-available/*`, 'terminal');
-    await execute(`  composer config --global --auth http-basic.zeour.repo.repman.io token 882348531a5bbe88761dbb26c1d1ffa9a8c4ff518e4f3111e4b160f26f6927ed  `, 'terminal');
+    await execute(`composer config --global --auth http-basic.zeour.repo.repman.io token 882348531a5bbe88761dbb26c1d1ffa9a8c4ff518e4f3111e4b160f26f6927ed`, 'terminal');
 
     const availableProjects = await systemProjects(systemName);
     let configContent = ``;
@@ -85,7 +78,7 @@ console.log(currentIP, currentIP)
         if (element.update) {
           // Update project
           if (element.branchName) {
-            await execute(`cd /var/www/${systemName}/${element.projectName} && git checkout ${element.branchName} && git pull ${element.gitlabUrl} ${element.branchName}`, 'terminal');
+            await execute(`cd /var/www/${systemName}/${element.projectName} && git pull ${element.gitlabUrl}`, 'terminal');
           } else {
             await execute(`cd /var/www/${systemName}/${element.projectName} && git pull ${element.gitlabUrl}`, 'terminal');
           }
@@ -95,7 +88,6 @@ console.log(currentIP, currentIP)
           await execute(`rm -r /var/www/${systemName}/${element.projectName}/vendor`, 'terminal');
           await execute(`cd /var/www/${systemName}/${element.projectName} && composer install`, 'terminal');
           await execute(`cd /var/www/${systemName}/${element.projectName} && composer dump-autoload`, 'terminal');
-
         }
         if (element.composerUpdate) {
           // Update composer
@@ -110,41 +102,30 @@ console.log(currentIP, currentIP)
           await migrate(systemName, element.projectName);
         }
 
-if (req.body.isHttp){
-
-}else{
-  await execute(`echo Listen ${element.port}  >> /etc/apache2/ports.conf`, 'terminal');
-  await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
-if(req.body.systemName=='QMS'){
-  if(element.projectName=='msa'){
-  await execute(`sed -i "/^MSA_URL=http:\/\/.*/s/.*/MSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-  await execute(`sed -i "/^APP_URL=http:\/\/.*/s/.*/APP_URL=http:\/\/${currentIP}}:${element.port}}/" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
-  await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/cron*.sh"`, 'terminal');
-  await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/reset.sh"`, 'terminal');
-
-
-  }else if(element.projectName=='ems'){
-  
-    await execute(`sed -i "/^EMS_URL=http:\/\/.*/s/.*/EMS_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-    await execute(`sed -i 's|http://[^/]*|http://${currentIP}:${element.port}|' /home/zeuor/${systemName}/cronincb.sh"`, 'terminal');
-
-  }else if(element.projectName=='csa'){
-    await execute(`sed -i "/^CSA_URL=http:\/\/.*/s/.*/CSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-
-  }else if(element.projectName=='display'){
-    await execute(`sed -i "/^DSA_URL=http:\/\/.*/s/.*/DSA_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-  
-    }else if(element.projectName=='keypad'){
-    await execute(`sed -i "/^keypad_URL=http:\/\/.*/s/.*/keypad_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-  }else if(element.projectName=='MobileWCSA'){
-    await execute(`sed -i "/^MOBILE_URL=http:\/\/.*/s/.*/MOBILE_URL=http:\/\/${currentIP}:${element.port}/" "/var/www/${systemName}/*/.env"`, 'terminal');
-  }  
-
-  
-  
-}
-}
-await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
+          // No additional action needed for HTTP
+          await execute(`echo Listen ${element.port} >> /etc/apache2/ports.conf`, 'terminal');
+          await execute(`sed -i "s|^APP_URL=http://.*|APP_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
+          if (req.body.systemName === 'QMS') {
+            if (element.projectName === 'msa') {
+              await execute(`sed -i "s|^MSA_URL=http://.*|MSA_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+              await execute(`sed -i "s|^APP_URL=http://.*|APP_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
+              await execute(`sed -i "s|http://[^/]*|http://${currentIP}:${element.port}|" "/home/zeuor/${systemName}/cron*.sh"`, 'terminal');
+              await execute(`sed -i "s|http://[^/]*|http://${currentIP}:${element.port}|" "/home/zeuor/${systemName}/reset.sh"`, 'terminal');
+            } else if (element.projectName === 'ems') {
+              await execute(`sed -i "s|^EMS_URL=http://.*|EMS_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+              await execute(`sed -i "s|http://[^/]*|http://${currentIP}:${element.port}|" "/home/zeuor/${systemName}/cronincb.sh"`, 'terminal');
+            } else if (element.projectName === 'csa') {
+              await execute(`sed -i "s|^CSA_URL=http://.*|CSA_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+            } else if (element.projectName === 'display') {
+              await execute(`sed -i "s|^DSA_URL=http://.*|DSA_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+            } else if (element.projectName === 'keypad') {
+              await execute(`sed -i "s|^keypad_URL=http://.*|keypad_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+            } else if (element.projectName === 'MobileWCSA') {
+              await execute(`sed -i "s|^MOBILE_URL=http://.*|MOBILE_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/*/.env"`, 'terminal');
+            }
+          }
+        
+        await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
 
         configContent = `
     <VirtualHost *:${element.port}>
@@ -165,7 +146,7 @@ await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${e
 
     if (unavailableProjects.length === 0) {
       await execute(`cd /etc/apache2/sites-available && a2ensite *`, 'terminal');
-      await execute(`systemctl reload apache2 *`, 'terminal');
+      await execute(`systemctl reload apache2`, 'terminal');
 
       res.set('Cache-Control', 'public, max-age=300'); // 1 hour TTL
       res.status(StatusCodes.OK).json({ message: 'Setup successful. All projects are available.' });
@@ -177,4 +158,3 @@ await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${e
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Error processing request.' });
   }
 };
-
