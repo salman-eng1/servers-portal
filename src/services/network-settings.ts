@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'fs';
 import { promisify } from 'util';
 import YAML from 'yaml';
 import { execute } from './non-streamed-command';
+import { setupQmscripts } from '@portal/utils/scripts/qms';
 
 
 
@@ -51,7 +52,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const updatedNetplanConfig = YAML.stringify(netplanData);
     await writeFilePromise(netplanFilePath, updatedNetplanConfig);
     await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /var/www`, 'terminal')
-    await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeuor`,'terminal')
+    await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeour`,'terminal')
 
     // Apply the changes
     // await execPromise('netplan apply');

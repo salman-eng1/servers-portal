@@ -206,6 +206,32 @@ sudo chmod -R ug+rwx "$project_path/$projectname/storage" "$project_path/$projec
 echo "Fixed permissions for $projectname"
 
 `
+
+
+const changeEnvIP=
+`
+#!/bin/bash
+
+SEARCH_DIR=$3
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 search_pattern replacement"
+  exit 1
+fi
+
+SEARCH_PATTERN=$1
+REPLACEMENT=$2
+
+# Find all .env files and execute sed command on each
+find "$SEARCH_DIR" -type f -name ".env" | while read -r env_file; do
+  echo "changing IPs at $env_file"
+  sed -i "s/$SEARCH_PATTERN/$REPLACEMENT/g" "$env_file"
+done
+
+echo "Finished processing all .env files."
+`
+
     try {
         await execute(`rm /home/zeour/QMS/* && rm /home/zeour/scripts/*`, 'terminal');
         await execute(`echo "${crontab}" > /etc/crontab`, 'terminal');
@@ -214,6 +240,7 @@ echo "Fixed permissions for $projectname"
         await createFile(checkinbranch,'/home/zeour/QMS/checkinbranch.sh',0o755);
         await createFile(cronconv,'/home/zeour/QMS/cronconv.sh',0o755);
         await createFile(cronemail,'/home/zeour/QMS/cronemail.sh',0o755);
+        await createFile(changeEnvIP,'/home/zeour/scripts/changeEnvIP.sh',0o755);
         await createFile(exportDB,'/home/zeour/scripts/exportDB.sh',0o755);
         await createFile(cronsendemailreport,'/home/zeour/QMS/cronsendemailreport.sh',0o755);
         await createFile(permission,'/home/zeour/QMS/permission.sh',0o755);

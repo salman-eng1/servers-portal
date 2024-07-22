@@ -1,5 +1,4 @@
-import  {setupQmscripts} from "@portal/scripts/qms";
-import { createFile } from "@portal/services/create-file";
+import  {setupQmscripts} from "@portal/utils/scripts/qms";
 import { execute } from "@portal/services/non-streamed-command"
 import { migrate, migrateFresh, systemProjects } from "@portal/services/sharedHelper";
 import { logger } from "@portal/utils/logging";
@@ -60,17 +59,13 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
   let unavailableProjects: string[] = [];
   try{
   const currentIP = (await execute("ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1", 'terminal')).trim();
-  console.log(currentIP, currentIP);
 
 //setup apache conf
-  await execute(`sed -i '/^Listen/d' /etc/apache2/ports.conf`, 'terminal');
   await execute(`cd /etc/apache2/sites-available && a2dissite *`, 'terminal');
-  await execute(`rm /etc/apache2/sites-available/*`, 'terminal');
   await execute(`composer config --global --auth http-basic.zeour.repo.repman.io token 882348531a5bbe88761dbb26c1d1ffa9a8c4ff518e4f3111e4b160f26f6927ed`, 'terminal');
   
   const availableProjects = await systemProjects(systemName);
-  let configContent = ``;
-  let filePath = ``;
+
   for (const element of projects) {
     if (!availableProjects.includes(element.projectName)) {
         unavailableProjects.push(element.projectName);
@@ -97,34 +92,18 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
           // Migrate project
           await migrate(systemName, element.projectName);
         }
-
-        // await execute(`echo Listen ${element.port} >> /etc/apache2/ports.conf`, 'terminal');
-        // await execute(`sed -i "s|^APP_URL=http://.*|APP_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
         if (req.body.systemName === 'QMS') {
         await setupQmscripts(currentIP)
         }
       
       await execute(`bash /home/zeoor/scripts/permission.sh /var/www/${systemName} ${element.projectName}`, 'terminal');
 
-      configContent = `
-      <VirtualHost *:${element.port}>
-          DocumentRoot /var/www/${systemName}/${element.projectName}/public
-          <Directory /var/www/${systemName}/${element.projectName}>
-              AllowOverride All
-              Order allow,deny
-              allow from all
-          </Directory>
-          ErrorLog \${APACHE_LOG_DIR}/${element.projectName}_error.log
-          CustomLog \${APACHE_LOG_DIR}/${element.projectName}_access.log combined
-      </VirtualHost>
-      `;
-          filePath = `/etc/apache2/sites-available/${element.projectName}.conf`
-       await createFile(configContent, filePath, 0o644)
+      await execute(`cd /etc/apache2/sites-available && a2ensite ${element.projectName}`, 'terminal');
+
         }
       }
   
       if (unavailableProjects.length === 0) {
-        await execute(`cd /etc/apache2/sites-available && a2ensite *`, 'terminal');
         await execute(`systemctl reload apache2`, 'terminal');
   
         res.set('Cache-Control', 'public, max-age=300'); // 1 hour TTL
