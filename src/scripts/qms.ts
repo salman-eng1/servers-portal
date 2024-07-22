@@ -3,7 +3,7 @@ import { execute } from "@portal/services/non-streamed-command";
 import { logger } from "@portal/utils/logging";
 
 export const setupQmscripts=async(msaIP: string): Promise<void> =>{
-    const crontab: string = `
+    const crontab = `
     SHELL=/bin/sh
     PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
     # m h dom mon dow user  command
