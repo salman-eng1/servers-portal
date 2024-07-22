@@ -188,7 +188,7 @@ sshpass -p PUK@@zeOur@www666rd scp -P 5050 backup_DB_$DateStamp.zip zeour@127.0.
     #/bin/bash
     curl http://${msaIP}:8070/send_email_report    `;
 try{
-    await execute(`rm /home/zeour/QMS/* && rm /home/zeour/scripts/exportDB.sh`, 'terminal' )
+    // await execute(`rm /home/zeour/QMS/* && rm /home/zeour/scripts/exportDB.sh`, 'terminal' )
     await execute(`cat ${crontab} > /etc/crontab`, 'terminal' )
     await createFile(fix_redis,'/home/zeour/QMS/fix_redis.sh')
     await createFile(reset,'/home/zeour/QMS/reset.sh')
