@@ -181,15 +181,39 @@ curl http://${msaIP}:8070/send_reminder_email
 curl http://${msaIP}:8070/send_email_report
 `;
 
+const permission=`
+#! /bin/bash
+
+if [ -z "$1" ]; then
+    echo "Error: Project path not provided. Usage: ./fix_permissions.sh <project_path>"
+    exit 1
+fi
+
+project_path="$1"
+declare -a StringArray=("keypad")  # Add more project names as needed
+
+#declare -a StringArray=("visitor_receptionist_portal" "visitor_management_portal" "visitor_kiosk_app")  # Add more project names as needed
+for projectname in \${StringArray[@]}; do
+    sudo chown -R zeour:www-data "$project_path/$projectname"
+    sudo find "$project_path/$projectname" -type f -exec chmod 664 {} \;
+    sudo find "$project_path/$projectname" -type d -exec chmod 775 {} \;
+    sudo chgrp -R www-data "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
+    sudo chmod -R ug+rwx "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
+    echo "Fixed permissions for $projectname"
+done
+
+`
     try {
         await execute(`echo "${crontab}" > /etc/crontab`, 'terminal');
-        await createFile(fix_redis,'/home/zeour/QMS/fix_redis.sh');
-        await createFile(reset,'/home/zeour/QMS/reset.sh');
-        await createFile(checkinbranch,'/home/zeour/QMS/checkinbranch.sh');
-        await createFile(cronconv,'/home/zeour/QMS/cronconv.sh');
-        await createFile(cronemail,'/home/zeour/QMS/cronemail.sh');
-        await createFile(exportDB,'/home/zeour/scripts/exportDB.sh');
-        await createFile(cronsendemailreport,'/home/zeour/QMS/cronsendemailreport.sh');
+        await createFile(fix_redis,'/home/zeour/QMS/fix_redis.sh',0o755);
+        await createFile(reset,'/home/zeour/QMS/reset.sh',0o755);
+        await createFile(checkinbranch,'/home/zeour/QMS/checkinbranch.sh',0o755);
+        await createFile(cronconv,'/home/zeour/QMS/cronconv.sh',0o755);
+        await createFile(cronemail,'/home/zeour/QMS/cronemail.sh',0o755);
+        await createFile(exportDB,'/home/zeour/scripts/exportDB.sh',0o755);
+        await createFile(cronsendemailreport,'/home/zeour/QMS/cronsendemailreport.sh',0o755);
+        await createFile(permission,'/home/zeour/QMS/permission.sh',0o755);
+
     } catch (err) {
         logger.log('error', 'error in setupQmscripts() Method',err);
     }
