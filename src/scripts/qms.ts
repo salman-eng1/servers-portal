@@ -183,13 +183,13 @@ curl http://${msaIP}:8070/send_email_report
 
     try {
         await execute(`echo "${crontab}" > /etc/crontab`, 'terminal');
-        await createFile('/home/zeour/QMS/fix_redis.sh', fix_redis);
-        await createFile('/home/zeour/QMS/reset.sh', reset);
-        await createFile('/home/zeour/QMS/checkinbranch.sh', checkinbranch);
-        await createFile('/home/zeour/QMS/cronconv.sh', cronconv);
-        await createFile('/home/zeour/QMS/cronemail.sh', cronemail);
-        await createFile('/home/zeour/scripts/exportDB.sh', exportDB);
-        await createFile('/home/zeour/QMS/cronsendemailreport.sh', cronsendemailreport);
+        await createFile(fix_redis,'/home/zeour/QMS/fix_redis.sh');
+        await createFile(reset,'/home/zeour/QMS/reset.sh');
+        await createFile(checkinbranch,'/home/zeour/QMS/checkinbranch.sh');
+        await createFile(cronconv,'/home/zeour/QMS/cronconv.sh');
+        await createFile(cronemail,'/home/zeour/QMS/cronemail.sh');
+        await createFile(exportDB,'/home/zeour/scripts/exportDB.sh');
+        await createFile(cronsendemailreport,'/home/zeour/QMS/cronsendemailreport.sh');
     } catch (err) {
         logger.log('error', 'error in setupQmscripts() Method',err);
     }
