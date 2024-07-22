@@ -182,25 +182,28 @@ curl http://${msaIP}:8070/send_email_report
 `;
 
 const permission=`
-#! /bin/bash
+#!/bin/bash
 
 if [ -z "$1" ]; then
-    echo "Error: Project path not provided. Usage: ./fix_permissions.sh <project_path>"
+    echo "Error: Project path not provided. Usage: ./fix_permissions.sh <project_path> <projectname>"
+    exit 1
+fi
+
+if [ -z "$2" ]; then
+    echo "Error: Project name not provided. Usage: ./fix_permissions.sh <project_path> <projectname>"
     exit 1
 fi
 
 project_path="$1"
-declare -a StringArray=("keypad")  # Add more project names as needed
+projectname="$2"
 
-#declare -a StringArray=("visitor_receptionist_portal" "visitor_management_portal" "visitor_kiosk_app")  # Add more project names as needed
-for projectname in \${StringArray[@]}; do
-    sudo chown -R zeour:www-data "$project_path/$projectname"
-    sudo find "$project_path/$projectname" -type f -exec chmod 664 {} \;
-    sudo find "$project_path/$projectname" -type d -exec chmod 775 {} \;
-    sudo chgrp -R www-data "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
-    sudo chmod -R ug+rwx "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
-    echo "Fixed permissions for $projectname"
-done
+sudo chown -R zeour:www-data "$project_path/$projectname"
+sudo find "$project_path/$projectname" -type f -exec chmod 664 {} \;
+sudo find "$project_path/$projectname" -type d -exec chmod 775 {} \;
+sudo chgrp -R www-data "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
+sudo chmod -R ug+rwx "$project_path/$projectname/storage" "$project_path/$projectname/bootstrap/cache"
+
+echo "Fixed permissions for $projectname"
 
 `
     try {

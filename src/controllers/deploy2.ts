@@ -104,7 +104,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
         await setupQmscripts(currentIP)
         }
       
-      await execute(`bash /home/zeoor/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
+      await execute(`bash /home/zeoor/scripts/permission.sh /var/www/${systemName} ${element.projectName}`, 'terminal');
 
       configContent = `
       <VirtualHost *:${element.port}>
