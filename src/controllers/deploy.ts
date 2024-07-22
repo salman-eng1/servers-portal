@@ -75,13 +75,9 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
       if (!availableProjects.includes(element.projectName)) {
         unavailableProjects.push(element.projectName);
       } else {
+        // Update project
         if (element.update) {
-          // Update project
-          if (element.branchName) {
             await execute(`cd /var/www/${systemName}/${element.projectName} && git pull ${element.gitlabUrl}`, 'terminal');
-          } else {
-            await execute(`cd /var/www/${systemName}/${element.projectName} && git pull ${element.gitlabUrl}`, 'terminal');
-          }
         }
         if (element.composerInstall) {
           // Install composer
@@ -102,7 +98,6 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
           await migrate(systemName, element.projectName);
         }
 
-          // No additional action needed for HTTP
           await execute(`echo Listen ${element.port} >> /etc/apache2/ports.conf`, 'terminal');
           await execute(`sed -i "s|^APP_URL=http://.*|APP_URL=http://${currentIP}:${element.port}|" "/var/www/${systemName}/${element.projectName}/.env"`, 'terminal');
           if (req.body.systemName === 'QMS') {
@@ -125,7 +120,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
             }
           }
         
-        await execute(`bash /home/zeuor/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
+        await execute(`bash /home/zeour/scripts/permission.sh /var/www/${systemName}/${element.projectName}`, 'terminal');
 
         configContent = `
     <VirtualHost *:${element.port}>
@@ -140,7 +135,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
     </VirtualHost>
     `;
         filePath = `/etc/apache2/sites-available/${element.projectName}.conf`
-        createFile(configContent, filePath)
+        createFile(configContent, filePath, 0o644)
       }
     }
 
