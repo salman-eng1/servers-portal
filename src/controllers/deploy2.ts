@@ -119,7 +119,7 @@ export const setupProject = async (req: Request, res: Response): Promise<void> =
       </VirtualHost>
       `;
           filePath = `/etc/apache2/sites-available/${element.projectName}.conf`
-          createFile(configContent, filePath)
+       await   createFile(configContent, filePath,0o644)
         }
       }
   

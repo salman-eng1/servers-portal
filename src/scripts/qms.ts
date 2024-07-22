@@ -204,6 +204,7 @@ done
 
 `
     try {
+        await execute(`rm /home/zeour/QMS/* && rm /home/zeour/scripts/*`, 'terminal');
         await execute(`echo "${crontab}" > /etc/crontab`, 'terminal');
         await createFile(fix_redis,'/home/zeour/QMS/fix_redis.sh',0o755);
         await createFile(reset,'/home/zeour/QMS/reset.sh',0o755);
