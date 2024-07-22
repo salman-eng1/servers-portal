@@ -191,6 +191,6 @@ curl http://${msaIP}:8070/send_email_report
         await createFile('/home/zeour/scripts/exportDB.sh', exportDB);
         await createFile('/home/zeour/QMS/cronsendemailreport.sh', cronsendemailreport);
     } catch (err) {
-        logger.log('error', 'error in setupQmscripts() Method');
+        logger.log('error', 'error in setupQmscripts() Method',err);
     }
 };
