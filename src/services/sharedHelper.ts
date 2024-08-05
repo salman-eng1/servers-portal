@@ -20,6 +20,23 @@ export const migrateFresh=async(systemName:string, projectName:string): Promise<
 
 
 
+// export const getPorts = async (systemName: string): Promise<string[]> => {
+//   const systemsProjects: string[] = await systemProjects(systemName);
+  
+//   // Use Promise.all to handle async calls in parallel
+//   const ports: string[] = await Promise.all(
+//     systemsProjects.map(async (project) => {
+//       const port: string = await execute(
+//         `grep -E '^APP_URL=' /var/www/${systemName}/${project}/.env | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
+//         ''
+//       );
+//       return port;
+//     })
+//   );
+
+//   return ports;
+// }
+
 export const getPorts = async (systemName: string): Promise<string[]> => {
   const systemsProjects: string[] = await systemProjects(systemName);
   
@@ -30,12 +47,11 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
         `grep -E '^APP_URL=' /var/www/${systemName}/${project}/.env | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
         ''
       );
-      return port;
+      return port.trim() || '80'; // Trim newline and replace empty string with '80'
     })
   );
 
   return ports;
 }
-
 
   
