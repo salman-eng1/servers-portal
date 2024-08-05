@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import path from 'path';
 import { healthRoutes } from '@portal/routes/health';
 import { troubleshootRoutes } from '@portal/routes/troubleshoot';
-import { deployRoutes } from '@portal/routes/deploy';
+import { deployRoutes } from '@portal/routes/enable-system';
 import { networkRoutes } from '@portal/routes/network-settings';
 
 

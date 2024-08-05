@@ -16,3 +16,26 @@ export const migrateFresh=async(systemName:string, projectName:string): Promise<
   await  execute(`cd /var/www/${systemName}/${projectName} && php artisan migrate:fresh --seed`, 'terminal')
 
 }
+
+
+
+
+export const getPorts = async (systemName: string): Promise<string[]> => {
+  const systemsProjects: string[] = await systemProjects(systemName);
+  
+  // Use Promise.all to handle async calls in parallel
+  const ports: string[] = await Promise.all(
+    systemsProjects.map(async (project) => {
+      const port: string = await execute(
+        `grep -E '^APP_URL=' /var/www/${systemName}/${project}/.env | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
+        ''
+      );
+      return port;
+    })
+  );
+
+  return ports;
+}
+
+
+  

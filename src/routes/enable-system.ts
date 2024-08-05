@@ -1,4 +1,4 @@
-import { getSystems,getSystemProjects, getEnabledProjects } from '@portal/controllers/deploy';
+import { getSystems,getSystemProjects, getEnabledProjects, getSystemPorts } from '@portal/controllers/enable-system';
 import { setupProject } from '@portal/controllers/deploy2';
 
 
@@ -15,6 +15,8 @@ this.router=express.Router();
         this.router.get('/get-system-projects', getSystemProjects)
         this.router.get('/get-enabled-projects',getEnabledProjects)
         this.router.post('/setup-project',setupProject)
+        this.router.get('/get-system-ports',getSystemPorts)
+
 
 
         return this.router
