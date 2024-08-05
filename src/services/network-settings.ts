@@ -2,7 +2,6 @@ import { readFile, writeFile } from 'fs';
 import { promisify } from 'util';
 import YAML from 'yaml';
 import { execute } from './non-streamed-command';
-import { setupQmscripts } from '@portal/utils/scripts/qms';
 
 
 
