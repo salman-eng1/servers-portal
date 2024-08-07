@@ -11,7 +11,7 @@ this.router=express.Router();
 
     public routes(){
         this.router.get('/get-system-ports',getSystemPorts)
-        this.router.get('/delete-system-ports',deleteSystemPorts)
+        this.router.delete('/delete-system-ports',deleteSystemPorts)
 
         return this.router
     }

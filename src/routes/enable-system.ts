@@ -1,5 +1,5 @@
 import { getSystems,getSystemProjects, getEnabledProjects } from '@portal/controllers/enable-system';
-import { getSystemPorts } from '@portal/controllers/ports';
+// import { getSystemPorts } from '@portal/controllers/ports';
 
 
 import express, {Router} from 'express'
@@ -14,7 +14,7 @@ this.router=express.Router();
         this.router.get('/get-systems',getSystems)
         this.router.get('/get-system-projects', getSystemProjects)
         this.router.get('/get-enabled-projects',getEnabledProjects)
-        this.router.get('/get-system-ports',getSystemPorts)
+        // this.router.get('/get-system-ports',getSystemPorts)
 
 
 
