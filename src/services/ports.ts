@@ -41,6 +41,7 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
   
   export const addPorts = async (systemName: string): Promise<string[]> => {
     const ports: string[] = await getPorts(systemName);
+    await deletePorts(systemName);
   
     const addedPorts: string[] = await Promise.all(
       ports.map(async (port) => {
