@@ -1,23 +1,31 @@
 import { execute } from "@portal/services/non-streamed-command";
-import { systemProjects } from "./sharedHelper";
 
 export const getPorts = async (systemName: string): Promise<string[]> => {
-    const systemsProjects: string[] = await systemProjects(systemName);
-    
-    // Use Promise.all to handle async calls in parallel
-    const ports: string[] = await Promise.all(
-      systemsProjects.map(async (project) => {
-        const port: string = await execute(
-          `grep -E '^APP_URL=' /var/www/${systemName}/${project}/.env | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
-          ''
-        );
-        return port.trim() || '80'; // Trim newline and replace empty string with '80'
-      })
-    );
-  
-    return ports as string[];
-  }
-  
+  const systemPath = `/var/www/${systemName}`;
+
+  // Execute the find command and get the output as a string
+  const envFilesString: string = await execute(
+    `find ${systemPath} -type f -name '.env'`, 
+    ''
+  );
+
+  // Split the output string into an array of file paths
+  const envFiles: string[] = envFilesString.split('\n').filter(Boolean); // Filter out empty strings
+
+  // Use Promise.all to handle async calls in parallel
+  const ports: string[] = await Promise.all(
+    envFiles.map(async (envFile) => {
+      const port: string = await execute(
+        `grep -E '^APP_URL=' ${envFile} | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
+        ''
+      );
+      return port.trim() || '80'; // Trim newline and replace empty string with '80'
+    })
+  );
+
+  return ports as string[];
+}
+
   export const deletePorts = async (systemName: string): Promise<string[]> => {
     const ports: string[] = await getPorts(systemName);
   
