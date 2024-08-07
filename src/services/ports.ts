@@ -21,20 +21,25 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
   export const deletePorts = async (systemName: string): Promise<string[]> => {
     const ports: string[] = await getPorts(systemName);
   
-    // Use Promise.all to handle async deletion of port lines in parallel
     const deletedPorts: string[] = await Promise.all(
       ports.map(async (port) => {
-        // Define the command to delete the line containing the port in the Apache configuration
         const deleteCommand = `sudo sed -i '/${port}/d' /etc/apache2/ports.conf`;
-  
-        // Execute the delete command
-        await execute(deleteCommand, '');
-  
-        // Return the deleted port to confirm it was processed
-        return port;
+          await execute(deleteCommand, '');
+          return port;
       })
     );
-  
     return deletedPorts;
   }
   
+  export const addPorts = async (systemName: string): Promise<string[]> => {
+    const ports: string[] = await getPorts(systemName);
+  
+    const addedPorts: string[] = await Promise.all(
+      ports.map(async (port) => {
+        const addCommand = `echo 'Listen ${port}' >> /etc/apache2/ports.conf`;
+          await execute(addCommand, '');
+          return port;
+      })
+    );
+    return addedPorts;
+  }
