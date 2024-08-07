@@ -16,6 +16,7 @@ export const appRoutes = (app: Application) => {
 
 
   app.use(express.static(path.join(__dirname,'..', 'public')));
+  // app.use(BASE_PATH, authRoutes.routes());
 
   // app.use(BASE_PATH, authRoutes.routes());
 };
