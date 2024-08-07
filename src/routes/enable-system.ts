@@ -1,4 +1,5 @@
-import { getSystems,getSystemProjects, getEnabledProjects, getSystemPorts } from '@portal/controllers/enable-system';
+import { getSystems,getSystemProjects, getEnabledProjects } from '@portal/controllers/enable-system';
+import { getSystemPorts } from '@portal/controllers/ports';
 
 
 import express, {Router} from 'express'
