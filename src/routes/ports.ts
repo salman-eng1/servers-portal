@@ -1,4 +1,4 @@
-import {getSystemPorts } from '@portal/controllers/ports';
+import {deleteSystemPorts, getSystemPorts } from '@portal/controllers/ports';
 
 
 import express, {Router} from 'express'
@@ -11,6 +11,8 @@ this.router=express.Router();
 
     public routes(){
         this.router.get('/get-system-ports',getSystemPorts)
+        this.router.get('/delete-system-ports',deleteSystemPorts)
+
         return this.router
     }
 
