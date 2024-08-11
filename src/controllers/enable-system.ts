@@ -35,16 +35,7 @@ export const getSystemProjects = async (req: Request, res: Response): Promise<vo
   }
 };
 
-export const getEnabledProjects = async (_req: Request, res: Response): Promise<void> => {
-  try {
-    const projects = await execute("ls -l /etc/apache2/sites-enabled | awk '{print $9}'", '');
-    const enabledProjectsArray = projects.split('\n').filter(project => project.trim() !== '');
-    res.status(StatusCodes.OK).json({ message: enabledProjectsArray });
-  } catch (err) {
-    logger.log('error', `Failed to retrieve enabled projects`)
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to retrieve enabled projects' });
-  }
-};
+
 
 export const setupProject = async (req: Request, res: Response): Promise<void> => {
   const systemName: string = req.body.systemName;
