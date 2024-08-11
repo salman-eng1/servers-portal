@@ -3,33 +3,31 @@ import { basename } from 'path';
 
 
 export const systemProjects = async (systemName: string): Promise<string[]> => {
-  const rootDirPath = `/var/www/${systemName}`;
-
-  // Find all directories up to two levels deep under /var/www/systemName
+  // Find all directories under /var/www/systemName
   const projects = await execute(
-    `find ${rootDirPath} -mindepth 1 -maxdepth 2 -type d`, 
-    ''
+      `find /var/www/${systemName} -type d`, 
+      ''
   );
+
+  const rootDirPath = `/var/www/${systemName}`;
 
   const directories = projects
     .split('\n')
-    .filter(dir => dir.trim() !== '');
+    .filter(project => project.trim() !== '')
+    .filter(dir => dir !== rootDirPath);
 
-  // Set to store directories that should be excluded (those that have subdirectories)
-  const parentDirs = new Set<string>();
+  const hasSubdirectories = async (dir: string): Promise<boolean> => {
+    const subdirs = await execute(`find ${dir} -mindepth 1 -maxdepth 1 -type d`, '');
+    return subdirs.split('\n').filter(subdir => subdir.trim() !== '').length > 0;
+  };
 
-  for (const dir of directories) {
-    const subdirs = directories.filter(d => d.startsWith(`${dir}/`));
-    if (subdirs.length > 0) {
-      parentDirs.add(dir);
-    }
-  }
-
-  const filteredDirectories = directories
-    .filter(dir => !parentDirs.has(dir))
-    .map(dir => basename(dir));
-
-  return filteredDirectories;
+  const filteredDirectories = await Promise.all(
+    directories.map(async dir => {
+      const containsSubdirs = await hasSubdirectories(dir);
+      return containsSubdirs ? null : basename(dir); // Return null for directories with subdirectories
+    })
+  );
+  return filteredDirectories.filter(dir => dir !== null) as string[];
 };
 
 
