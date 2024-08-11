@@ -8,7 +8,13 @@ import { StatusCodes } from "http-status-codes";
 export const getSystems = async (_req: Request, res: Response): Promise<void> => {
   try {
     const projects = await execute("ls -l /var/www | grep '^d' | awk '{print $9}'", '');
-    const projectsArray = projects.split('\n').filter(project => project.trim() !== '');
+    const projectsArrayTemp = projects.split('\n').filter(project => project.trim() !== '');
+    const projectsArray: string[]=[];
+    projectsArrayTemp.forEach(project => {
+      if (project != 'server-portal'){
+        projectsArray.push(project);
+      }
+    })
     res.status(StatusCodes.OK).json({ message: projectsArray });
   } catch (err) {
     logger.log('error', `Failed to retrieve projects`)
