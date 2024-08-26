@@ -34,8 +34,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const netplanConfig = await readFilePromise(netplanFilePath, 'utf8');
     const netplanData: NetplanConfig = YAML.parse(netplanConfig);
 
-    const currentIP = await execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
-    // Backup the existing netplan configuration
+    const currentIP = await execute("ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1", 'terminal');    // Backup the existing netplan configuration
     await writeFilePromise(netplanBackupFilePath, netplanConfig);
 
     // Update the IP and mask for the specified interface
@@ -51,9 +50,8 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const updatedNetplanConfig = YAML.stringify(netplanData);
     await writeFilePromise(netplanFilePath, updatedNetplanConfig);
     console.log(newIP)
-if(currentIP){
     console.log(currentIP)
-}
+
     await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /var/www`, 'terminal')
     // await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeuor/cron*`,'terminal')
 
