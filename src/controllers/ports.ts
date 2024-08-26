@@ -5,8 +5,10 @@ import { StatusCodes } from 'http-status-codes';
 
 export const getSystemPorts = async (_req: Request, res: Response): Promise<void> => {
     try {
+      console.log('porrrrrts')
       const ports = await getPorts(_req.body.systemName)
-      
+      console.log(ports)
+
       res.status(StatusCodes.OK).json({ message: ports });
     } catch (err) {
       logger.log('error', `Failed to retrieve enabled projects`)
