@@ -12,7 +12,7 @@ export const appRoutes = (app: Application) => {
   app.use('/api', troubleshootRoutes.routes());
   app.use('/api', deployRoutes.routes());
   app.use('/api', networkRoutes.routes());
-  //app.use('/api', ports.routes());
+  // app.use('/api', ports.routes());
   app.use('/api', apache.routes());
 
 
