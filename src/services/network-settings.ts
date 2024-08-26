@@ -51,7 +51,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const updatedNetplanConfig = YAML.stringify(netplanData);
     await writeFilePromise(netplanFilePath, updatedNetplanConfig);
     await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /var/www`, 'terminal')
-    await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeour`,'terminal')
+    await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeuor`,'terminal')
 
     // Apply the changes
     await execute('netplan apply','');
