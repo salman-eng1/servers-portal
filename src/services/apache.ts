@@ -1,11 +1,11 @@
-import { systemProjects } from "@portal/services/sharedHelper";
+import { subSystemProjects } from "@portal/services/sharedHelper";
 import { execute } from "./non-streamed-command";
 import { deletePorts,addPorts } from "@portal/services/ports";
 import { promises as fs } from 'fs';
 import { crontab } from "@portal/utils/env-files/crontab";
 
 export const disableSystem = async (systemName: string): Promise<string[]> => {
-    const projects: string[] = await systemProjects(systemName);
+    const projects: string[] = await subSystemProjects(systemName);
   
     const disabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
@@ -23,7 +23,7 @@ export const disableSystem = async (systemName: string): Promise<string[]> => {
 
 
   export const enableSystem = async (systemName: string): Promise<string[]> => {
-    const projects: string[] = await systemProjects(systemName);
+    const projects: string[] = await subSystemProjects(systemName);
   
     const enabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
