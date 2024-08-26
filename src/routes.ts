@@ -5,6 +5,7 @@ import { troubleshootRoutes } from '@portal/routes/troubleshoot';
 import { deployRoutes } from '@portal/routes/enable-system';
 import { networkRoutes } from '@portal/routes/network-settings';
 import { apache } from '@portal/routes/apache';
+import { ports } from '@portal/routes/ports';
 
 
 export const appRoutes = (app: Application) => {
@@ -12,7 +13,7 @@ export const appRoutes = (app: Application) => {
   app.use('/api', troubleshootRoutes.routes());
   app.use('/api', deployRoutes.routes());
   app.use('/api', networkRoutes.routes());
-  // app.use('/api', ports.routes());
+  app.use('/api', ports.routes());
   app.use('/api', apache.routes());
 
 
