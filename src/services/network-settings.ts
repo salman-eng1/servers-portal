@@ -16,7 +16,6 @@ interface NetplanConfig {
       eth0: {
         dhcp4: boolean;
         addresses: string[];
-        gateway: string;
         nameservers: {
           addresses: string[]; // Dynamic array of nameserver addresses
         };
@@ -27,7 +26,7 @@ interface NetplanConfig {
 }
 
 
-export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[],gateway:string): Promise<void> => {
+export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[]): Promise<void> => {
     const netplanFilePath = '/etc/netplan/00-installer-config.yaml'; // Adjust if necessary
     const netplanBackupFilePath = '/etc/netplan/00-installer-config.yaml.bak';
 
@@ -44,7 +43,6 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     netplanData.network.ethernets.eth0.dhcp4 = false;
     netplanData.network.ethernets.eth0.addresses = [`${newIP}/${newMask}`];
     netplanData.network.ethernets.eth0.nameservers.addresses = dns;
-    netplanData.network.ethernets.eth0.gateway = `${gateway}`;
 
 
 
