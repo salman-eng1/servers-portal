@@ -27,7 +27,7 @@ export const disableSystem = async (systemName: string): Promise<string[]> => {
   
     const enabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
-        const enableCommand = `ln -s /etc/apache2/sites-available/${project}.conf /etc/apache2/sites-enabled/${project}.conf`;
+        const enableCommand = `cd /etc/apache2/sites-available && a2ensite ${project}.conf`;
           await execute(enableCommand, 'terminal');
           return project;
       })
