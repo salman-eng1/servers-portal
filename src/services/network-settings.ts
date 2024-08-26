@@ -18,14 +18,13 @@ interface NetplanConfig {
         addresses: string[];
         gateway4: string;
         nameservers: {
-          addresses: string[]; // Dynamic array of nameserver addresses
+          addresses: string[];
         };
       };
     };
     version: number;
   };
 }
-
 
 export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[],gateway:string): Promise<void> => {
     const netplanFilePath = '/etc/netplan/00-installer-config.yaml'; // Adjust if necessary
