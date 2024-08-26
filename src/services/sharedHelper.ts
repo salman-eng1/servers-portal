@@ -1,6 +1,25 @@
 import { execute } from "@portal/services/non-streamed-command"
 import { basename } from 'path';
 
+export const subSystemProjects = async (systemName: string): Promise<string[]> => {
+  try {
+    const rootDirPath = `/var/www/${systemName}`;
+
+    // Find all directories within the root directory (non-recursive)
+    const projects = await execute(`find ${rootDirPath} -mindepth 1 -maxdepth 1 -type d`, '');
+
+    const directories = projects
+      .split('\n')
+      .filter(project => project.trim() !== '');
+
+    // Return the base names of the directories
+    return directories.map(dir => basename(dir));
+  } catch (error) {
+    console.error(`Error fetching projects for ${systemName}:`, error);
+    return [];
+  }
+};
+
 export const systemProjects = async (systemName: string): Promise<string[]> => {
   try {
     const rootDirPath = `/var/www/${systemName}`;

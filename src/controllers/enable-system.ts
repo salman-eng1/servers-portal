@@ -1,6 +1,6 @@
 import { createFile } from "@portal/services/create-file";
 import { execute } from "@portal/services/non-streamed-command"
-import { migrate, migrateFresh, systemProjects } from "@portal/services/sharedHelper";
+import { migrate, migrateFresh, subSystemProjects, systemProjects } from "@portal/services/sharedHelper";
 import { logger } from "@portal/utils/logging";
 import { Request, Response } from "express"
 import { StatusCodes } from "http-status-codes";
@@ -26,7 +26,7 @@ export const getSystems = async (_req: Request, res: Response): Promise<void> =>
 export const getSystemProjects = async (req: Request, res: Response): Promise<void> => {
   try {
     const systemName = req.body.systemName
-    const projectsArray: string[] = await systemProjects(systemName)
+    const projectsArray: string[] = await subSystemProjects(systemName)
     res.status(StatusCodes.OK).json({ message: projectsArray });
   } catch (err) {
     logger.log('error', `Failed to retrieve sub projects`)
