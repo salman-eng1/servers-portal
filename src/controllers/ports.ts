@@ -1,4 +1,4 @@
-import { addPorts, getPorts } from '@portal/services/ports';
+import { addPorts, deletePorts, getPorts } from '@portal/services/ports';
 import { logger } from '@portal/utils/logging';
 import { Request, Response } from "express"
 import { StatusCodes } from 'http-status-codes';
@@ -27,13 +27,13 @@ export const getSystemPorts = async (_req: Request, res: Response): Promise<void
   };
 
 
-  // export const deleteSystemPorts = async (_req: Request, res: Response): Promise<void> => {
-  //   try {
-  //     const deletedPorts = await deletePorts(_req.body.systemName)
+  export const deleteSystemPorts = async (_req: Request, res: Response): Promise<void> => {
+    try {
+      const deletedPorts = await deletePorts(_req.body.systemName)
       
-  //     res.status(StatusCodes.OK).json({ message: deletedPorts });
-  //   } catch (err) {
-  //     logger.log('error', `Failed to disable projects projects ports`)
-  //     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to disable ports' });
-  //   }
-  // };
+      res.status(StatusCodes.OK).json({ message: deletedPorts });
+    } catch (err) {
+      logger.log('error', `Failed to disable projects projects ports`)
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to disable ports' });
+    }
+  };

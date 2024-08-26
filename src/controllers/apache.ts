@@ -1,4 +1,4 @@
-import { enableSystem } from "@portal/services/apache";
+import { disableSystem, enableSystem } from "@portal/services/apache";
 import { execute } from "@portal/services/non-streamed-command";
 import { logger } from "@portal/utils/logging";
 import { Request, Response } from "express";
@@ -19,19 +19,19 @@ export const enableSys = async (req: Request, res: Response): Promise<void> => {
 
 
 
-  // export const disableSys = async (req: Request, res: Response): Promise<void> => {
-  //   try {
-  //       console.log("hi")
+  export const disableSys = async (req: Request, res: Response): Promise<void> => {
+    try {
+        console.log("hi")
 
-  //     const systemName = req.body.systemName
-  //     const disabledSystem: string[] = await disableSystem(systemName)
-  //     res.status(StatusCodes.OK).json({ message: disabledSystem });
-  //   } catch (err) {
-  //     logger.log('error', `Failed to disable system`)
+      const systemName = req.body.systemName
+      const disabledSystem: string[] = await disableSystem(systemName)
+      res.status(StatusCodes.OK).json({ message: disabledSystem });
+    } catch (err) {
+      logger.log('error', `Failed to disable system`)
   
-  //     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to disable system' });
-  //   }
-  // };
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Failed to disable system' });
+    }
+  };
 
 
   export const getEnabledProjects = async (_req: Request, res: Response): Promise<void> => {
