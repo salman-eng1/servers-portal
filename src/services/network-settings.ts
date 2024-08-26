@@ -34,7 +34,7 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string[
     const netplanConfig = await readFilePromise(netplanFilePath, 'utf8');
     const netplanData: NetplanConfig = YAML.parse(netplanConfig);
 
-    const currentIP = execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
+    const currentIP = await execute("'ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1' ", 'terminal')
     // Backup the existing netplan configuration
     await writeFilePromise(netplanBackupFilePath, netplanConfig);
 
