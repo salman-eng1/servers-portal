@@ -20,14 +20,22 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
   return ports as string[];
 }
 
-  export const deletePorts = async (): Promise<void> => {  
-    const deleteCommand = `sed -i '/^Listen[[:space:]][^4]*$/d' /etc/apache2/ports.conf`;
-    await execute(deleteCommand, 'terminal');
+  export const deletePorts = async (systemName: string): Promise<string[]> => {
+    const ports: string[] = await getPorts(systemName);
+  
+    const deletedPorts: string[] = await Promise.all(
+      ports.map(async (port) => {
+        const deleteCommand = `sudo sed -i '/${port}/d' /etc/apache2/ports.conf`;
+          await execute(deleteCommand, '');
+          return port;
+      })
+    );
+    return deletedPorts;
   }
   
   export const addPorts = async (systemName: string): Promise<string[]> => {
     const ports: string[] = await getPorts(systemName);
-    await deletePorts();
+    await deletePorts(systemName);
   
     const addedPorts: string[] = await Promise.all(
       ports.map(async (port) => {
