@@ -1,4 +1,4 @@
-import { addPorts, deletePorts, getPorts } from '@portal/services/ports';
+import { addPorts, getPorts } from '@portal/services/ports';
 import { logger } from '@portal/utils/logging';
 import { Request, Response } from "express"
 import { StatusCodes } from 'http-status-codes';
