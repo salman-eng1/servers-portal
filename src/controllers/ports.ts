@@ -29,7 +29,7 @@ export const getSystemPorts = async (_req: Request, res: Response): Promise<void
 
   export const deleteSystemPorts = async (_req: Request, res: Response): Promise<void> => {
     try {
-      const deletedPorts = await deletePorts(_req.body.systemName)
+      const deletedPorts = await deletePorts()
       
       res.status(StatusCodes.OK).json({ message: deletedPorts });
     } catch (err) {
