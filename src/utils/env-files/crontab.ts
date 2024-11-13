@@ -19,7 +19,5 @@ export const crontab = async (systemName: string): Promise<string> => {
         10 00 * * *    root    bash /home/zeuor/scripts/exportDB.sh
         59 23 * * *    root    bash /home/zeuor/scripts/rotate_logs.sh
         `;
-    }else{
-    // Handle other cases or return an error if needed
-    throw new Error('Unsupported system name');
+    
 }};
