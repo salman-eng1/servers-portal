@@ -1,5 +1,5 @@
 export const crontab = async (systemName: string): Promise<string> => {
-    if (systemName === 'QMS') {
+    // if (systemName === 'QMS') {
         return `
         SHELL=/bin/sh
         PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -20,4 +20,5 @@ export const crontab = async (systemName: string): Promise<string> => {
         59 23 * * *    root    bash /home/zeuor/scripts/rotate_logs.sh
         `;
     
-}};
+// }
+};
