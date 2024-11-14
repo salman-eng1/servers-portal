@@ -37,6 +37,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
 
   export const enableSystem = async (systemName: string,deleteAll:boolean): Promise<string[]> => {
+    disableSystem(systemName,deleteAll)
     const projects: string[] = await subSystemProjects(systemName);
     const enabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
@@ -45,7 +46,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
           return project;
       })
     );
-    await addPorts(systemName,deleteAll)
+    await addPorts(systemName)
     const crondata: string=await crontab(systemName) as string
     await fs.writeFile('/etc/crontab', crondata, 'utf-8');
     await execute('systemctl restart apache2','')

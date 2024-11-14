@@ -46,13 +46,8 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
 
 return 'ports deleted successfully';
 }
-  export const addPorts = async (systemName: string,deleteAll:boolean): Promise<string[]> => {
+  export const addPorts = async (systemName: string): Promise<string[]> => {
     const ports: string[] = await getPorts(systemName);
-    if(deleteAll){
-    await deletePorts();
-    }else{
-      await deleteProjectPorts(systemName)
-    }
     const addedPorts: string[] = await Promise.all(
       ports.map(async (port) => {
         const addCommand = `echo 'Listen ${port}' >> /etc/apache2/ports.conf && sed -i '/^Listen[^0-9]*$/d' /etc/apache2/ports.conf        `;

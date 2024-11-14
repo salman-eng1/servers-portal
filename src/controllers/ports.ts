@@ -17,7 +17,7 @@ export const getSystemPorts = async (_req: Request, res: Response): Promise<void
 
   export const addSystemPorts = async (_req: Request, res: Response): Promise<void> => {
     try {
-      const ports = await addPorts(_req.body.systemName,_req.body.deleteAll)
+      const ports = await addPorts(_req.body.systemName)
       
       res.status(StatusCodes.OK).json({ message: ports });
     } catch (err) {
