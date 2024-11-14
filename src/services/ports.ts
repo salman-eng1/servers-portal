@@ -18,7 +18,7 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
         `grep -E '^APP_URL=' ${envFile} | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
         ''
       );
-      return port.trim(); // Trim newline and replace empty string with '80'
+      return port.trim();
     })
   );
 
@@ -41,7 +41,7 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
   
     const addedPorts: string[] = await Promise.all(
       ports.map(async (port) => {
-        const addCommand = `echo 'Listen ${port}' >> /etc/apache2/ports.conf`;
+        const addCommand = `echo 'Listen ${port}' >> /etc/apache2/ports.conf && sed -i '/^Listen$/d; /^Listen [^8]/d' /etc/apache2/ports.conf        `;
           await execute(addCommand, '');
           return port;
       })
