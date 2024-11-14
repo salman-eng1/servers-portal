@@ -7,18 +7,24 @@ export const getPorts = async (systemName: string): Promise<string[]> => {
     ''
   );
   const envFiles: string[] = envFilesString.split('\n').filter(Boolean); // Filter out empty strings
+
   const ports: string[] = await Promise.all(
     envFiles.map(async (envFile) => {
+      // Check if the envFile path matches the specific condition
+      if (envFile === '/var/www/QMS/ems/.env') {
+        return '80';
+      }
       const port: string = await execute(
         `grep -E '^APP_URL=' ${envFile} | awk -F '=' '{print $2}' | sed -n 's/.*:\\([0-9]\\+\\).*/\\1/p'`, 
         ''
       );
-      return port.trim() || '80'; // Trim newline and replace empty string with '80'
+      return port.trim(); // Trim newline and replace empty string with '80'
     })
   );
 
   return ports as string[];
 }
+
 
   export const deletePorts = async (): Promise<string> => {
 
