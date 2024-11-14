@@ -10,7 +10,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
     const disabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
         if(deleteAll){
-         const  disableCommand = `cd /etc/apache2/sites-enabled && unlink *.conf`;
+         const  disableCommand = `cd /etc/apache2/sites-enabled && rm *.conf`;
          await execute(disableCommand, 'terminal');
 
         }else{
