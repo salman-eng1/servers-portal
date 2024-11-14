@@ -1,20 +1,34 @@
 import { subSystemProjects } from "@portal/services/sharedHelper";
 import { execute } from "./non-streamed-command";
-import { deletePorts,addPorts } from "@portal/services/ports";
+import { deletePorts,addPorts, deleteProjectPorts } from "@portal/services/ports";
 import { promises as fs } from 'fs';
 import { crontab } from "@portal/utils/env-files/crontab";
 
-export const disableSystem = async (systemName: string): Promise<string[]> => {
+export const disableSystem = async (systemName: string,deleteAll:boolean): Promise<string[]> => {
     const projects: string[] = await subSystemProjects(systemName);
   
     const disabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
-        const disableCommand = `cd /etc/apache2/sites-enabled && unlink ${project}.conf`;
-          await execute(disableCommand, 'terminal');
+        if(deleteAll){
+         const  disableCommand = `cd /etc/apache2/sites-enabled && unlink *.conf`;
+         await execute(disableCommand, 'terminal');
+
+        }else{
+         const  disableCommand = `cd /etc/apache2/sites-enabled && unlink ${project}.conf`;
+         await execute(disableCommand, 'terminal');
+
+
+        }
           return project;
       })
     );
-    await deletePorts()
+
+    if (deleteAll){
+      await deletePorts()
+
+    }else{
+      await deleteProjectPorts(systemName)
+    }
     await execute(`sudo sed -i '/${systemName}/d' /etc/crontab`, '');
 
     await execute('systemctl restart apache2','')

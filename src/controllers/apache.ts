@@ -25,7 +25,8 @@ export const enableSys = async (req: Request, res: Response): Promise<void> => {
         console.log("hi")
 
       const systemName = req.body.systemName
-      const disabledSystem: string[] = await disableSystem(systemName)
+      const deleteAll:boolean=req.body.deleteAll
+      const disabledSystem: string[] = await disableSystem(systemName,deleteAll)
       res.status(StatusCodes.OK).json({ message: disabledSystem });
     } catch (err) {
       logger.log('error', `Failed to disable system`)
