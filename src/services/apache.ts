@@ -22,9 +22,8 @@ export const disableSystem = async (systemName: string): Promise<string[]> => {
   }
 
 
-  export const enableSystem = async (systemName: string): Promise<string[]> => {
+  export const enableSystem = async (systemName: string,deleteAll:boolean): Promise<string[]> => {
     const projects: string[] = await subSystemProjects(systemName);
-  console.log(projects)
     const enabledProjects: string[] = await Promise.all(
       projects.map(async (project) => {
         const enableCommand = `cd /etc/apache2/sites-available && a2ensite ${project}.conf`;
@@ -32,7 +31,7 @@ export const disableSystem = async (systemName: string): Promise<string[]> => {
           return project;
       })
     );
-    await addPorts(systemName)
+    await addPorts(systemName,deleteAll)
     const crondata: string=await crontab(systemName) as string
     await fs.writeFile('/etc/crontab', crondata, 'utf-8');
     await execute('systemctl restart apache2','')

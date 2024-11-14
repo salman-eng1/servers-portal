@@ -7,7 +7,8 @@ import { StatusCodes } from "http-status-codes";
 export const enableSys = async (req: Request, res: Response): Promise<void> => {
     try {
       const systemName = req.body.systemName
-      const enabledSystem: string[] = await enableSystem(systemName)
+      const deleteAll:boolean=req.body.deleteAll
+      const enabledSystem: string[] = await enableSystem(systemName,deleteAll)
       res.status(StatusCodes.OK).json({ message: enabledSystem });
       
     } catch (err) {
