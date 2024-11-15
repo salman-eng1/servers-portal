@@ -9,6 +9,7 @@ import { appRoutes } from '@portal/routes';
 import { ApiError } from "@portal/utils/api-error";
 import { logger } from '@portal/utils/logging';
 import { Server } from 'socket.io';
+import cors from 'cors'
 
 const SERVER_PORT = 5000;
 export let socketIO: Server;
@@ -21,29 +22,18 @@ export class PortalServer {
     }
 
     public start(): void {
-        // this.securityMiddleware(this.app);
+        this.securityMiddleware(this.app);
         this.standardMiddleware(this.app);
         this.routesMiddleware(this.app);
         // this.errorHandler(this.app);
         this.startServer(this.app);
     }
 
-    // private securityMiddleware(app: Application): void {
-    //     app.set('trust proxy', 1);
-    //     app.use(
-    //         cookieSession({
-    //             name: 'session',
-    //             keys: [`${config.SECRET_KEY_ONE}`, `${config.SECRET_KEY_TWO}`],
-    //             maxAge: 24 * 7 * 3600000,
-    //             secure: config.NODE_ENV !== 'development',
-    //             ...(config.NODE_ENV !== 'development' && {
-    //                 sameSite: 'none'
-    //             })
-    //         })
-    //     );
-    //     app.use(hpp());
-    //     app.use(helmet());
-    // }
+    private securityMiddleware(app: Application): void {
+        app.set('trust proxy', 1);
+        app.use(cors({ origin: '*' })); // Adjust the origin as needed
+
+    }
 
     private standardMiddleware(app: Application): void {
         app.use(compression());
@@ -67,8 +57,12 @@ export class PortalServer {
     }
 
     private async createSocketIO(httpServer: http.Server): Promise<Server> {
-        const io: Server = new Server(httpServer);
-        socketIO = io;
+        const io = new Server(httpServer, {
+            cors: {
+              origin: 'http://127.0.0.1:5500', // Adjust the origin as needed
+              methods: ['GET', 'POST']
+            }
+          });        socketIO = io;
 
         io.on('connection', (socket) => {
             logger.log({ level: 'info', message: 'A client connected' });

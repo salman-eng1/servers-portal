@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Connection</title>
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js" crossorigin="anonymous"></script>
+</head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Service Control Portal</h1>
+        <div class="button-container">
+            <button id="check-services">Check Services</button>
+            <button id="show-running-ports">Show Running Ports</button>
+            <button id="setup-new-server">Setup New Server</button>
+        </div>
+        <div class="output-container" id="messages"></div>
+    </div>
+
+    <script src="./js/websocket-client.js"></script>
+    <script src="./js/service-control.js"></script>
+    <script src="./js/axios.min.js"></script>
+
+</body>
+</html>
