@@ -7385,3 +7385,5 @@
 2024-11-15T14:07:35.721Z info: A client connected {}
 2024-11-15T14:07:35.829Z info: A client disconnected {}
 2024-11-15T14:07:35.937Z info: A client connected {}
+2024-11-15T14:18:50.873Z info: server started successfully! {}
+2024-11-15T14:18:50.876Z info: Http server started successfully! {}

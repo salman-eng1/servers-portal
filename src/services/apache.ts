@@ -29,7 +29,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
     if (deleteAll){
       await deletePorts()
-      await execute('echo Lisen 5500 > /etc/apache2/ports.conf', 'terminal');
+      await execute('echo Lisen 5500 >> /etc/apache2/ports.conf', 'terminal');
 
 
     }else{
