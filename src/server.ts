@@ -59,7 +59,7 @@ export class PortalServer {
     private async createSocketIO(httpServer: http.Server): Promise<Server> {
         const io = new Server(httpServer, {
             cors: {
-              origin: 'http://127.0.0.1:5500', // Adjust the origin as needed
+              origin: '*', // Adjust the origin as needed
               methods: ['GET', 'POST']
             }
           });        socketIO = io;
