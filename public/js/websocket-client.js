@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const socket = io();
+    const messagesDiv = document.getElementById('messages');
 
     socket.on('connect', () => {
         console.log('Connected to WebSocket server');
@@ -11,9 +12,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     socket.on('terminal', (message) => {
         console.log('Received message from server:', message);
-        const formattedMessage = message.replace(/\n/g, '<br>'); // Replace newlines with <br> tags for HTML rendering
-        const messagesDiv = document.getElementById('messages');
-        messagesDiv.innerHTML += `<p>${formattedMessage}</p>`;
-    });
+        const formattedMessage = document.createElement('div');
+        formattedMessage.textContent = message; // Use textContent to prevent XSS and preserve formatting
+        messagesDiv.appendChild(formattedMessage);
 
+        // Auto-scroll to the bottom for new output
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    });
 });

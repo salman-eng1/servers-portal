@@ -23,4 +23,6 @@ function showRunningPorts() {
         });
 }
 
-
+function setupNewServer() {
+    window.open('./setup-server.html', '_blank'); 
+}
