@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    showProgressBar()
     axios.get(window.APP_URL+'/api/get-systems')
         .then(response => {
             const projects = response.data.message; // Access the "projects" array from the response
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 projects.forEach(project => {
                     const button = document.createElement('button');
                     button.textContent = project;
+                    hideProgressBar()
                     button.onclick = () => {
                         alert(`You clicked ${project}`);
                     };

@@ -14,10 +14,10 @@ document.getElementById('setup-new-server').addEventListener('click', function(e
 });
 
 function checkServices() {
-    showProgressBar()
+    // showProgressBar()
     axios.get(window.APP_URL+'/api/check-services')
         .then(response => {
-            hideProgressBar()
+            // hideProgressBar()
             // document.getElementById('messages').innerHTML = JSON.stringify('*******', null, 2);
         })
         .catch(error => {
@@ -26,11 +26,11 @@ function checkServices() {
 }
 
 function showRunningPorts() {
-    showProgressBar()
+    // showProgressBar()
     axios.get(window.APP_URL+'/api/check-ports')
         .then(response => {
             document.getElementById('messages').innerHTML = JSON.stringify(response.data, null, 2);
-            hideProgressBar()
+            // hideProgressBar()
         })
         .catch(error => {
             document.getElementById('messages').innerHTML = 'Error showing running ports: ' + error;
@@ -45,25 +45,3 @@ function setupNewServer() {
 
 
 
-// Function to show the progress bar
-function showProgressBar() {
-    const progressBarContainer = document.getElementById('progress-bar-container');
-    progressBarContainer.style.display = 'block';
-
-    // Simulate progress bar movement
-    let width = 0;
-    const interval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(interval);
-        } else {
-            width += 5; // Adjust the step for the speed of progress
-            document.getElementById('progress-bar').style.width = width + '%';
-        }
-    }, 100); // Adjust interval time to control the speed of the progress
-}
-
-// Function to hide the progress bar
-function hideProgressBar() {
-    const progressBarContainer = document.getElementById('progress-bar-container');
-    progressBarContainer.style.display = 'none';
-}
