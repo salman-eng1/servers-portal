@@ -11,7 +11,11 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
       projects.map(async (project) => {
         if(deleteAll){
          const  disableCommand = `cd /etc/apache2/sites-enabled && rm *.conf`;
+         const  enableServerPortal = `cd /etc/apache2/sites-available && a2ensite server-portal.conf`;
+
          await execute(disableCommand, 'terminal');
+         await execute(enableServerPortal, 'terminal');
+
 
         }else{
          const  disableCommand = `cd /etc/apache2/sites-enabled && unlink ${project}.conf`;
@@ -25,6 +29,8 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
     if (deleteAll){
       await deletePorts()
+      await execute('echo Lisen 5500 > /etc/apache2/ports.conf', 'terminal');
+
 
     }else{
       await deleteProjectPorts(systemName)
