@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     showProgressBar()
-    axios.get(window.APP_URL+'/api/get-systems')
+    axios.get(window.APP_URL + '/api/get-systems')
         .then(response => {
             const projects = response.data.message; // Access the "projects" array from the response
             if (Array.isArray(projects)) {
@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.textContent = project;
                     hideProgressBar()
                     button.onclick = () => {
-                        alert(`You clicked ${project}`);
+                        // Redirect to the project page, passing the project name as a query parameter
+                        window.location.href = `./project.html?project=${encodeURIComponent(project)}`;
                     };
                     buttonContainer.appendChild(button);
                 });

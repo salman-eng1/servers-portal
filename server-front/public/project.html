@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    <script src="./js/axios.min.js"></script> <!-- Include axios script -->
+    <script src="./js/config.js"></script> <!-- Link to your custom project JavaScript -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing your styles -->
+</head>
+<body>
+    <div class="container">
+        <!-- Project Title -->
+        <h1 id="project-name">Project Name</h1>
+        
+        <!-- Buttons for enabling/disabling the system -->
+        <div class="button-container">
+            <button id="enable-system">Enable System</button>
+            <button id="disable-system">Disable System</button>
+        </div>
+
+        <!-- Section to show all enabled projects -->
+        <h2>Enabled Projects</h2>
+        <div class="output-container">
+            <table id="enabled-projects-table">
+                <thead>
+                    <tr>
+                        <th> Currnet Projects Running On Server</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Enabled projects will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Checkbox for disabling all enabled projects -->
+        <label>
+            <input type="checkbox" id="disable-all-checkbox"> Disable all enabled projects
+        </label>
+
+        <!-- Progress Bar Container -->
+        <div id="progress-bar-container" style="display: none;">
+            <div id="progress-bar" style="width: 0%; height: 20px; background-color: #4caf50;"></div>
+        </div>
+
+        <!-- Container for dynamically generated project buttons -->
+        <div id="project-buttons"></div>
+    </div>
+
+    <!-- Script to handle the page logic -->
+    <script src="./js/project.js"></script> <!-- Link to your custom project JavaScript -->
+    <script src="./js/progress-bar.js"></script>
+
+
+</body>
+</html>
