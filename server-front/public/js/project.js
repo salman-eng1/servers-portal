@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => {
             hideProgressBar();
+            refreshEnabledProjects();
             // Optionally update the table or UI based on the response
         })
         .catch(error => {
@@ -51,6 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+
+
+    function refreshEnabledProjects() {
+        axios.get(window.APP_URL + '/api/get-enabled-projects')
+            .then(response => {
+                console.log(response);
+                const projects = response.data.message; // Assuming this returns an array of projects
+                const tableBody = document.getElementById('enabled-projects-table').getElementsByTagName('tbody')[0];
+    
+                // Clear any existing rows in the table body before populating
+                tableBody.innerHTML = '';
+    
+                // Populate the table with the returned projects
+                projects.forEach(project => {
+                    // Remove the .conf extension
+                    const projectName = project.replace('.conf', '');
+    
+                    const row = tableBody.insertRow();
+                    const cell = row.insertCell(0);
+                    cell.textContent = projectName;
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching system projects:', error);
+            });
+    }
 
     // Fetch and display system projects based on system name
     axios.get(window.APP_URL + '/api/get-enabled-projects')
