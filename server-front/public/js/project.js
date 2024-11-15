@@ -16,9 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enable System / Disable System Buttons
     document.getElementById('enable-system').addEventListener('click', () => {
         showProgressBar();
-        axios.post(window.APP_URL + '/api/enable-system')
+
+        const deleteAll = document.getElementById('disable-all-checkbox').checked;
+        
+        // Get the system name from the <h1> element
+        const systemName = document.getElementById('project-name').textContent.trim();
+
+        axios.post(window.APP_URL + '/api/enable-system', {
+            deleteAll: deleteAll,
+            systemName: systemName
+        })
             .then(response => {
                 hideProgressBar();
+                refreshEnabledProjects();
+
                 // Optionally update the table or UI
             })
             .catch(error => {
