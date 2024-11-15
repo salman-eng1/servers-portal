@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const socket = io(window.APP_URL);
-    const messagesDiv = document.getElementById('messages');
+        const messagesDiv = document.getElementById('messages');
 
     socket.on('connect', () => {
         console.log('Connected to WebSocket server');

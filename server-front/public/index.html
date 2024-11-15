@@ -9,8 +9,7 @@
     <script src="./js/axios.min.js"></script>
     <script src="https://cdn.socket.io/4.5.1/socket.io.min.js" crossorigin="anonymous"></script>
 </head>
-    <link rel="stylesheet" href="styles.css">
-</head>
+<link rel="stylesheet" href="styles.css">
 <body>
     <div class="container">
         <h1>Service Control Portal</h1>
@@ -18,13 +17,18 @@
             <button id="check-services">Check Services</button>
             <button id="show-running-ports">Show Running Ports</button>
             <button id="setup-new-server">Setup New Server</button>
-            
         </div>
+
+        <!-- Progress bar -->
+        <div id="progress-bar-container" style="display: none;">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Output messages -->
         <div class="output-container" id="messages"></div>
     </div>
 
     <script src="./js/websocket-client.js"></script>
     <script src="./js/service-control.js"></script>
-
 </body>
 </html>

@@ -62,13 +62,18 @@ button:hover {
     color: #00ff00; /* Green text color */
 }
 
+/* Progress bar styling */
+#progress-bar-container {
+    width: 100%;
+    height: 4px; /* Slim progress bar */
+    background-color: #333; /* Dark background for progress bar */
+    margin-top: 20px; /* Add some spacing */
+    border-radius: 2px; /* Rounded edges for the progress bar */
+}
 
-
-
-
-
-
-
-
-
-
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50; /* Green color for progress */
+    transition: width 0.3s ease-in-out;
+}
