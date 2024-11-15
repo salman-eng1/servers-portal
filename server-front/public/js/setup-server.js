@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    axios.get('http://127.0.0.1:5000/api/get-systems')
+    axios.get(window.APP_URL+'/api/get-systems')
         .then(response => {
             const projects = response.data.message; // Access the "projects" array from the response
             if (Array.isArray(projects)) {
