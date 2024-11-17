@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get the project name from the URL query parameter
+    // Extract the project name from the URL query parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const projectName = urlParams.get('project'); // Get the project name from the URL query
+    const projectName = urlParams.get('projectName'); // Ensure this matches the key in loadProjectPage
 
     if (projectName) {
-        // Set the project name in the <h1> and buttons
+        // Update the project title and button labels
         document.getElementById('project-name').textContent = projectName;
         document.getElementById('enable-system').textContent = `${projectName} Enable System`;
         document.getElementById('disable-system').textContent = `${projectName} Disable System`;
     }
 
-    // Enable System / Disable System Buttons
+    // Function to handle system enabling
     document.getElementById('enable-system').addEventListener('click', () => {
-
         const deleteAll = document.getElementById('disable-all-checkbox').checked;
-        
-        // Get the system name from the <h1> element
-        const systemName = document.getElementById('project-name').textContent.trim();
+        const systemName = projectName.trim(); // Use extracted projectName directly
 
         axios.post(window.APP_URL + '/api/enable-system', {
             deleteAll: deleteAll,
             systemName: systemName
         })
             .then(response => {
+                console.log('System enabled successfully:', response.data);
                 refreshEnabledProjects();
             })
             .catch(error => {
@@ -30,65 +28,47 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
+    // Function to handle system disabling
     document.getElementById('disable-system').addEventListener('click', () => {
-    
         const deleteAll = document.getElementById('disable-all-checkbox').checked;
-        
-        // Get the system name from the <h1> element
-        const systemName = document.getElementById('project-name').textContent.trim();
-    
+        const systemName = projectName.trim(); // Use extracted projectName directly
+
         axios.post(window.APP_URL + '/api/disable-system', {
             deleteAll: deleteAll,
             systemName: systemName
         })
-        .then(response => {
-            refreshEnabledProjects();
-        })
-        .catch(error => {
-            console.error('Error disabling system:', error);
-        });
+            .then(response => {
+                console.log('System disabled successfully:', response.data);
+                refreshEnabledProjects();
+            })
+            .catch(error => {
+                console.error('Error disabling system:', error);
+            });
     });
 
+    // Function to refresh the enabled projects table
     function refreshEnabledProjects() {
         axios.get(window.APP_URL + '/api/get-enabled-projects')
             .then(response => {
-                console.log(response);
-                const projects = response.data.message; 
+                const projects = response.data.message;
                 const tableBody = document.getElementById('enabled-projects-table').getElementsByTagName('tbody')[0];
-    
-                // Clear any existing rows in the table body before populating
+
+                // Clear any existing rows
                 tableBody.innerHTML = '';
-    
+
+                // Populate table with enabled projects
                 projects.forEach(project => {
-                    const projectName = project.replace('.conf', '');
+                    const projectName = project.replace('.conf', ''); // Remove file extension if present
                     const row = tableBody.insertRow();
                     const cell = row.insertCell(0);
                     cell.textContent = projectName;
                 });
             })
             .catch(error => {
-                console.error('Error fetching system projects:', error);
+                console.error('Error fetching enabled projects:', error);
             });
     }
 
-    // Fetch and display system projects based on system name
-    axios.get(window.APP_URL + '/api/get-enabled-projects')
-        .then(response => {
-            const projects = response.data.message;
-            const tableBody = document.getElementById('enabled-projects-table').getElementsByTagName('tbody')[0];
-    
-            // Clear any existing rows in the table body before populating
-            tableBody.innerHTML = '';
-    
-            projects.forEach(project => {
-                const projectName = project.replace('.conf', '');
-                const row = tableBody.insertRow();
-                const cell = row.insertCell(0);
-                cell.textContent = projectName;
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching enabled projects:', error);
-        });
+    // Initial fetch of enabled projects on page load
+    refreshEnabledProjects();
 });
-

@@ -72,28 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching projects:', error);
             });
     }
-
-    // Function to load a project page into an iframe
     function loadProjectPage(project) {
         // Clear existing content
         setupNewServerSection.innerHTML = '';
-
+    
         // Create an iframe element
         const iframe = document.createElement('iframe');
-        iframe.src = `project.html`; // Replace with your actual path format
-
+        iframe.src = `project.html?projectName=${encodeURIComponent(project)}`; // Pass the project name as a query parameter
+    
         // Dynamically adjust iframe height based on .main-content height
         const mainContentHeight = document.querySelector('.main-content').offsetHeight;
         iframe.style.width = '100%';
         iframe.style.height = `${mainContentHeight}px`; // Match the height of .main-content
         iframe.style.border = 'none';
-
+    
         // Append the iframe to the section
         setupNewServerSection.appendChild(iframe);
-
+    
         console.log(`Iframe created for project: ${project}`); // Debug log to confirm iframe creation
     }
-
+    
     // Function to load the networking.html page into an iframe
     function loadNetworkingPage() {
         // Clear existing content
