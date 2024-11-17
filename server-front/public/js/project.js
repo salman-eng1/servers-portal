@@ -1,18 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const progressModal = document.getElementById('progress-modal');
+    // Extract the project name from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectName = urlParams.get('projectName'); // Ensure this matches the key in loadProjectPage
 
-    function showProgressModal() {
-        progressModal.style.display = 'flex';
+    if (projectName) {
+        // Update the project title and button labels
+        document.getElementById('project-name').textContent = projectName;
+        document.getElementById('enable-system').textContent = `${projectName} Enable System`;
+        document.getElementById('disable-system').textContent = `${projectName} Disable System`;
+    } else {
+        console.error('Project name is missing from the URL parameters.');
     }
 
-    function hideProgressModal() {
-        progressModal.style.display = 'none';
-    }
-
+    // Function to handle system enabling
     document.getElementById('enable-system').addEventListener('click', () => {
-        showProgressModal(); // Show modal when request starts
+        if (!projectName) {
+            console.error('Project name is not defined.');
+            return;
+        }
+        
         const deleteAll = document.getElementById('disable-all-checkbox').checked;
-        const systemName = projectName.trim();
+        const systemName = projectName.trim(); // Use extracted projectName directly
+
+        showProgressModal(); // Show modal when request starts
 
         axios.post(window.APP_URL + '/api/enable-system', {
             deleteAll: deleteAll,
@@ -30,10 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Function to handle system disabling
     document.getElementById('disable-system').addEventListener('click', () => {
-        showProgressModal(); // Show modal when request starts
+        if (!projectName) {
+            console.error('Project name is not defined.');
+            return;
+        }
+
         const deleteAll = document.getElementById('disable-all-checkbox').checked;
-        const systemName = projectName.trim();
+        const systemName = projectName.trim(); // Use extracted projectName directly
+
+        showProgressModal(); // Show modal when request starts
 
         axios.post(window.APP_URL + '/api/disable-system', {
             deleteAll: deleteAll,
