@@ -41,8 +41,13 @@ export const updateNetplanIP = async (newIP: string, newMask: string,dns:string,
 
     netplanData.network.ethernets.eth0.dhcp4 = false;
     netplanData.network.ethernets.eth0.addresses = [`${newIP}/${newMask}`];
-    netplanData.network.ethernets.eth0.nameservers.addresses = [dns];
-    netplanData.network.ethernets.eth0.gateway4 = `${gateway}`;
+// Ensure dns is treated as an array
+if (typeof dns === 'string') {
+  netplanData.network.ethernets.eth0.nameservers.addresses = dns.split(',').map(ip => ip.trim());
+} else {
+  netplanData.network.ethernets.eth0.nameservers.addresses = dns;
+}
+  netplanData.network.ethernets.eth0.gateway4 = `${gateway}`;
 
 
 
