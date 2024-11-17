@@ -236,3 +236,21 @@ h1 {
     background-color: #1f6fa2; /* Darker shade for active button */
 }
 
+
+
+.progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar-fill {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s;
+}
