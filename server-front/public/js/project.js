@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function showProgressBar() {
+function showProgressModal() {
     const progressBarContainer = document.getElementById('progress-modal');
     progressBarContainer.style.display = 'block';
 
@@ -117,7 +117,7 @@ function showProgressBar() {
 }
 
 // Function to hide the progress bar
-function hideProgressBar() {
+function hideProgressModal() {
     const progressBarContainer = document.getElementById('progress-modal');
     progressBarContainer.style.display = 'none';
 }
