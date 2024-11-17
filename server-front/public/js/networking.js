@@ -6,8 +6,8 @@ document.getElementById('submit-button').addEventListener('click', function() {
     const gateway = document.getElementById('gateway').value;
 
     axios.post(window.APP_URL + '/api/change-netplan-ip', {
-        newIP: newIP,
-        newMask: newMask,
+        ip: newIP,
+        mask: newMask,
         dns: dns,
         gateway: gateway
     })
