@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file containing your styles -->
 </head>
 <body>
-    <div class="container">
+    <div class="main-content">
         <!-- Project Title -->
         <h1 id="project-name">Project Name</h1>
-        
+
         <!-- Buttons for enabling/disabling the system -->
         <div class="button-container">
             <button id="enable-system">Enable System</button>
@@ -25,7 +25,7 @@
             <table id="enabled-projects-table">
                 <thead>
                     <tr>
-                        <th> Currnet Projects Running On Server</th>
+                        <th>Current Projects Running On Server</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,20 +38,8 @@
         <label>
             <input type="checkbox" id="disable-all-checkbox"> Disable all enabled projects
         </label>
-
-        <!-- Progress Bar Container -->
-        <div id="progress-bar-container" style="display: none;">
-            <div id="progress-bar" style="width: 0%; height: 20px; background-color: #4caf50;"></div>
-        </div>
-
-        <!-- Container for dynamically generated project buttons -->
-        <div id="project-buttons"></div>
     </div>
 
-    <!-- Script to handle the page logic -->
-    <script src="./js/project.js"></script> <!-- Link to your custom project JavaScript -->
-    <script src="./js/progress-bar.js"></script>
-
-
+    <script src="./js/project.js"></script> <!-- Include custom JavaScript for the page -->
 </body>
 </html>

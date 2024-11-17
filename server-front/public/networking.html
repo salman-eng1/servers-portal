@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Configuration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure your styles are linked properly -->
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/config.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <form id="network-config-form">
+            <div class="input-group">
+                <label for="new-ip">New IP Address:</label>
+                <input type="text" id="new-ip" name="newIP" placeholder="Enter new IP" required>
+            </div>
+            <div class="input-group">
+                <label for="new-mask">Subnet Mask:</label>
+                <input type="text" id="new-mask" name="newMask" placeholder="Enter subnet mask" required>
+            </div>
+            <div class="input-group">
+                <label for="dns">DNS Servers (comma-separated):</label>
+                <input type="text" id="dns" name="dns" placeholder="Enter DNS servers" required>
+            </div>
+            <div class="input-group">
+                <label for="gateway">Gateway:</label>
+                <input type="text" id="gateway" name="gateway" placeholder="Enter gateway" required>
+            </div>
+            <div class="button-container">
+                <button type="button" id="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="./js/networking.js"></script>
+</body>
+</html>

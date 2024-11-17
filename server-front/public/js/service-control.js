@@ -8,10 +8,10 @@ document.getElementById('show-running-ports').addEventListener('click', function
     event.preventDefault(); // Prevent any default behavior that might reload the page
     showRunningPorts();
 });
-document.getElementById('setup-new-server').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent any default behavior that might reload the page
-    setupNewServer();
-});
+// document.getElementById('setup-server-link').addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent any default behavior that might reload the page
+//     setupNewServer();
+// });
 
 function checkServices() {
     // showProgressBar()
@@ -37,9 +37,6 @@ function showRunningPorts() {
         });
 }
 
-function setupNewServer() {
-    window.open('./setup-server.html', '_blank'); 
-}
 
 
 

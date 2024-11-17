@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="./js/config.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#" id="troubleshooting-link">Troubleshooting</a></li>
+                <li><a href="#" id="setup-network-interface-link">Setup Network Interface</a></li>
+                <li><a href="#" id="setup-server-link">Setup New Server</a></li>
+                <li><a href="#" id="configuration-link">Configuration</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div id="troubleshooting-section" class="content-section">
+                <h1>Service Control Portal</h1>
+                <div class="button-container">
+                    <button id="check-services">Check Services</button>
+                    <button id="show-running-ports">Show Running Ports</button>
+                </div>
+
+
+                <!-- Output messages -->
+                <div class="output-container" id="messages"></div>
+            </div>
+
+            <!-- Setup Network Interface Section -->
+            <div id="setup-network-interface-section" class="content-section" style="display: none;">
+                <h1>Network Interface Setup</h1>
+                <!-- Add relevant content for this section -->
+            </div>
+
+            <!-- Setup New Server Section -->
+            <div id="setup-new-server-section" class="content-section" style="display: none;">
+                <h1>Available Projects</h1>
+
+                <div class="button-container" id="project-buttons"></div> <!-- Button container for project buttons -->
+                
+                <!-- Project page container where project.html will be loaded -->
+                <div id="project-page-container"></div>
+            </div>
+
+            <!-- Configuration Section -->
+            <div id="configuration-section" class="content-section" style="display: none;">
+                <h1>Configuration Settings</h1>
+                <!-- Add configuration content here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/websocket-client.js"></script>
+    <script src="./js/service-control.js"></script>
+    <script src="./js/dashboard.js"></script>
+
+</body>
+</html>
