@@ -99,25 +99,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 function showProgressModal() {
     const progressBarContainer = document.getElementById('progress-modal');
+    if (!progressBarContainer) {
+        console.error('Progress modal element not found.');
+        return;
+    }
     progressBarContainer.style.display = 'block';
 
     // Simulate progress bar movement
     let width = 0;
     const interval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(interval);
+        const progressBar = document.getElementById('progress-bar');
+        if (progressBar) {
+            if (width >= 100) {
+                clearInterval(interval);
+            } else {
+                width += 5; // Adjust the step for the speed of progress
+                progressBar.style.width = width + '%';
+            }
         } else {
-            width += 5; // Adjust the step for the speed of progress
-            document.getElementById('progress-bar').style.width = width + '%';
+            console.error('Progress bar element not found.');
+            clearInterval(interval);
         }
     }, 100); // Adjust interval time to control the speed of the progress
 }
 
-// Function to hide the progress bar
 function hideProgressModal() {
     const progressBarContainer = document.getElementById('progress-modal');
+    if (!progressBarContainer) {
+        console.error('Progress modal element not found.');
+        return;
+    }
     progressBarContainer.style.display = 'none';
 }
