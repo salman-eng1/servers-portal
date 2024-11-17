@@ -6,6 +6,8 @@ import { StatusCodes } from "http-status-codes";
 
 export const enableSys = async (req: Request, res: Response): Promise<void> => {
     try {
+      console.log(req.body)
+
       const systemName = req.body.systemName
       const deleteAll:boolean=req.body.deleteAll
       const enabledSystem: string[] = await enableSystem(systemName,deleteAll)
@@ -22,7 +24,7 @@ export const enableSys = async (req: Request, res: Response): Promise<void> => {
 
   export const disableSys = async (req: Request, res: Response): Promise<void> => {
     try {
-        console.log("hi")
+      console.log(req.body)
 
       const systemName = req.body.systemName
       const deleteAll:boolean=req.body.deleteAll
