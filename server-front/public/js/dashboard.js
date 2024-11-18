@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Iframe created for project: ${project}`); // Debug log to confirm iframe creation
     }
     
+
+
+    
     // Function to load the networking.html page into an iframe
     function loadNetworkingPage() {
         // Clear existing content
@@ -120,3 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('troubleshootingSection not found');
     }
 });
+
+

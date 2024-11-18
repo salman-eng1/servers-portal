@@ -4,7 +4,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
     const newMask = document.getElementById('new-mask').value;
     const dns = document.getElementById('dns').value.split(',').map(d => d.trim());
     const gateway = document.getElementById('gateway').value;
-
+    showProgressModal(); 
     axios.post(window.APP_URL + '/api/change-netplan-ip', {
         ip: newIP,
         mask: newMask,
@@ -18,5 +18,9 @@ document.getElementById('submit-button').addEventListener('click', function() {
     .catch(error => {
         alert('Failed to update network configuration.');
         console.error(error);
+    })
+
+    .finally(() => {
+        hideProgressModal(); // Hide modal when request completes
     });
 });

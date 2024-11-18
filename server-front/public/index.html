@@ -22,12 +22,6 @@
             </ul>
         </aside>
         <main class="main-content">
-            <div id="progress-modal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <p>Loading, please wait...</p>
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
         
             <div id="troubleshooting-section" class="content-section">
                 <h1>Service Control Portal</h1>
@@ -35,12 +29,21 @@
                     <button id="check-services">Check Services</button>
                     <button id="show-running-ports">Show Running Ports</button>
                 </div>
-
-
+        
+        
                 <!-- Output messages -->
                 <div class="output-container" id="messages"></div>
             </div>
-
+        
+        <!-- Progress Modal -->
+        <div id="progress-modal-backdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+        <div id="progress-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; padding: 20px; border-radius: 10px; z-index: 1000; width: 300px; text-align: center;">
+            <div class="progress-bar">
+                <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+            <p>Processing, please wait...</p>
+        </div>
+                
             <!-- Setup Network Interface Section -->
             <div id="setup-network-interface-section" class="content-section" style="display: none;">
                 <h1>Network Interface Setup</h1>
@@ -66,8 +69,10 @@
     </div>
 
     <script src="./js/websocket-client.js"></script>
-    <script src="./js/service-control.js"></script>
+z    <script src="./js/service-control.js"></script>
     <script src="./js/dashboard.js"></script>
+    <script src="./js/progress_bar.js"></script>
+
 
 
 </body>
