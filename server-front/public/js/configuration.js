@@ -50,15 +50,15 @@ function loadConfigurationProjects() {
                     clearCacheContainer.appendChild(document.createElement('br')); // Line break for better layout
                 });
 
-                hideProgressModal(); // Hide progress modal once projects are loaded
             } else {
                 console.error('Expected an array of projects, but received:', projects);
-                hideProgressModal();
             }
         })
         .catch(error => {
             console.error('Error fetching projects:', error);
-            hideProgressModal();
+        })
+        .finally(() => {
+            hideProgressModal(); 
         });
 }
 
@@ -69,9 +69,7 @@ document.getElementById('migrate-submit').addEventListener('click', () => {
         console.log('Selected project for migration:', selectedProject.value);
         
         // Trigger the migration request
-        showProgressModal(); // Show progress modal
         migrateDatabase(selectedProject.value); // Call the function to send the request
-        hideProgressModal(); // Hide progress modal once request is completed
     } else {
         console.log('No project selected for migration.');
     }
@@ -84,9 +82,7 @@ document.getElementById('clearcache-submit').addEventListener('click', () => {
         console.log('Selected project for clearing cache:', selectedProject.value);
 
         // Trigger the cache clearing process, passing the selected project name
-        showProgressModal(); // Show progress modal
         clearCache(selectedProject.value); // Pass the project value to the function
-        hideProgressModal(); // Hide progress modal after cache is cleared
     } else {
         console.log('No project selected for clearing cache.');
     }
@@ -95,9 +91,7 @@ document.getElementById('clearcache-submit').addEventListener('click', () => {
 
 // Event listener for "Fix Symlinks" submit button (no radio buttons needed)
 document.getElementById('symlinks-submit').addEventListener('click', () => {
-    showProgressModal(); // Show progress modal
     fixSymlinks();
-    hideProgressModal(); // Hide progress modal after symlink fixing
 });
 // Function to handle migration request
 function migrateDatabase(projectName) {
@@ -109,10 +103,11 @@ function migrateDatabase(projectName) {
     .then(response => {
         console.log('Migration started for project:', projectName);
         console.log('API response:', response.data);
-        hideProgressModal()
     })
     .catch(error => {
         console.error('Error triggering migration:', error);
+    })    .finally(() => {
+        hideProgressModal(); 
     });
 }
 
@@ -126,10 +121,11 @@ function clearCache(projectName) {
     .then(response => {
         console.log('Cache cleared for project:', projectName);
         console.log('API response:', response.data);
-        hideProgressModal()
     })
     .catch(error => {
         console.error('Error clearing cache:', error);
+    })    .finally(() => {
+        hideProgressModal(); 
     });
 }
 
@@ -140,10 +136,11 @@ function fixSymlinks() {
     axios.post(window.APP_URL + '/api/fix-symlinks')
     .then(response => {
         console.log('Symlinks fixed:', response.data);
-        hideProgressModal()
     })
     .catch(error => {
         console.error('Error fixing symlinks:', error);
+    })    .finally(() => {
+        hideProgressModal(); 
     });
 }
 
