@@ -92,6 +92,13 @@ document.getElementById('clearcache-submit').addEventListener('click', () => {
     }
 });
 
+
+// Event listener for "Fix Symlinks" submit button (no radio buttons needed)
+document.getElementById('symlinks-submit').addEventListener('click', () => {
+    showProgressModal(); // Show progress modal
+    fixSymlinks();
+    hideProgressModal(); // Hide progress modal after symlink fixing
+});
 // Function to handle migration request
 function migrateDatabase(projectName) {
     axios.post(window.APP_URL + '/api/migrate-fresh', {
@@ -117,6 +124,17 @@ function clearCache(projectName) {
     })
     .catch(error => {
         console.error('Error clearing cache:', error);
+    });
+}
+
+
+function fixSymlinks() {
+    axios.post(window.APP_URL + '/api/fix-symlinks')
+    .then(response => {
+        console.log('Symlinks fixed:', response.data);
+    })
+    .catch(error => {
+        console.error('Error fixing symlinks:', error);
     });
 }
 

@@ -15,3 +15,11 @@ export const clearCache = async (systemName: string): Promise<string> => {
   return `${systemName} cache has been cleared` as string;
 
 };
+
+
+export const fixSymlinks = async (): Promise<string> => {
+
+  await execute(`bash /home/zeuor/scripts/symlinks.sh`, 'terminal');
+  return `All symlinks have been fixed correctly` as string;
+
+};
