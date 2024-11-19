@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurationLink.addEventListener('click', () => {
         hideAllSections();
         configurationSection.style.display = 'block';
+        loadConfigurationPage()
     });
 
     // Function to load projects for the "Setup New Server" section
@@ -115,7 +116,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(`Iframe created for networking page`); // Debug log to confirm iframe creation
     }
+    // Function to load the networking.html page into an iframe
+    function loadConfigurationPage() {
+        // Clear existing content
+        configurationSection.innerHTML = '';
 
+        // Create an iframe element
+        const iframe = document.createElement('iframe');
+        iframe.src = `configuration.html`; // Path to your networking page
+
+        // Dynamically adjust iframe height based on .main-content height
+        const mainContentHeight = document.querySelector('.main-content').offsetHeight;
+        iframe.style.width = '100%';
+        iframe.style.height = `${mainContentHeight}px`; // Match the height of .main-content
+        iframe.style.border = 'none';
+
+        // Append the iframe to the section
+        configurationSection.appendChild(iframe);
+
+        console.log(`Iframe created for configuration page`); // Debug log to confirm iframe creation
+    }
     // Default section shown on page load
     if (troubleshootingSection) {
         troubleshootingSection.style.display = 'block'; // Show troubleshooting section by default

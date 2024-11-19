@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./js/config.js"></script>
+    <script src="./js/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="config-container">
+
+        <!-- Migrate Database Section -->
+        <section>
+            <h2>Migrate Database</h2>
+            <div id="migrate-project-container" class="project-list"></div>
+            <button id="migrate-submit" class="submit-button">Submit</button>
+        </section>
+
+
+
+        <section>
+            <h2>Clear Cache</h2>
+            <div id="clearcache-project-container" class="project-list"></div>
+            <button id="clearcache-submit" class="submit-button">Submit</button>
+        </section>
+
+
+        <!-- Fix symlinks Section -->
+        <section>
+            <h2>Fix Symlinks</h2>
+            <div id="symlinks-project-container" class="project-list"></div>
+            <button id="symlinks-submit" class="submit-button">Submit</button>
+        </section>
+    </div>
+
+    <div id="progress-modal-backdrop"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;">
+    </div>
+    <div id="progress-modal"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; padding: 20px; border-radius: 10px; z-index: 1000; width: 300px; text-align: center;">
+        <div class="progress-bar">
+            <div id="progress-bar" class="progress-bar-fill"></div>
+        </div>
+        <p>Processing, please wait...</p>
+    </div>
+
+    <script src="./js/configuration.js"></script>
+    <script src="./js/progress_bar.js"></script>
+</body>
+
+</html>
