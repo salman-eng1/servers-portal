@@ -101,12 +101,15 @@ document.getElementById('symlinks-submit').addEventListener('click', () => {
 });
 // Function to handle migration request
 function migrateDatabase(projectName) {
+    showProgressModal(); // Show progress modal
+
     axios.post(window.APP_URL + '/api/migrate-fresh', {
         systemName: projectName
     })
     .then(response => {
         console.log('Migration started for project:', projectName);
         console.log('API response:', response.data);
+        hideProgressModal()
     })
     .catch(error => {
         console.error('Error triggering migration:', error);
@@ -115,12 +118,15 @@ function migrateDatabase(projectName) {
 
 // Function to clear cache and send the project name in the request body
 function clearCache(projectName) {
+    showProgressModal(); // Show progress modal
+
     axios.post(window.APP_URL + '/api/clear-cache', {
         systemName: projectName
     })
     .then(response => {
         console.log('Cache cleared for project:', projectName);
         console.log('API response:', response.data);
+        hideProgressModal()
     })
     .catch(error => {
         console.error('Error clearing cache:', error);
@@ -129,9 +135,12 @@ function clearCache(projectName) {
 
 
 function fixSymlinks() {
+    showProgressModal(); // Show progress modal
+
     axios.post(window.APP_URL + '/api/fix-symlinks')
     .then(response => {
         console.log('Symlinks fixed:', response.data);
+        hideProgressModal()
     })
     .catch(error => {
         console.error('Error fixing symlinks:', error);
