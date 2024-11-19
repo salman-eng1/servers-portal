@@ -18,7 +18,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
 
         }else{
-         const  disableCommand = `cd /etc/apache2/sites-enabled && rm ${project}.conf`;
+         const  disableCommand = `cd /etc/apache2/sites-enabled && unlink ${project}.conf`;
          await execute(disableCommand, 'terminal');
 
 
