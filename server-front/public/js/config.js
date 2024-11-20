@@ -5,4 +5,4 @@ window.Terminal_URL = 'https://192.168.1.27:4200'; // Replace with the value fro
 
 // ./js/config.js
  const EMAIL = "support@zeour.co.uk";
- const PASSWORD = "PUK@@zeOur@www666rd";
+ const PASSWORD = "";
