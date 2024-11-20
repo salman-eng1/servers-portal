@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const setupNetworkInterfaceLink = document.getElementById('setup-network-interface-link');
     const setupServerLink = document.getElementById('setup-server-link');
     const configurationLink = document.getElementById('configuration-link');
+    const terminalLink = document.getElementById('terminal-link');
 
     const troubleshootingSection = document.getElementById('troubleshooting-section');
     const setupNetworkInterfaceSection = document.getElementById('setup-network-interface-section');
     const setupNewServerSection = document.getElementById('setup-new-server-section');
     const configurationSection = document.getElementById('configuration-section');
+    const terminalSection = document.getElementById('terminal-section');
+
     const projectButtonsContainer = document.getElementById('project-buttons');
 
     // Function to hide all content sections
@@ -17,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setupNetworkInterfaceSection.style.display = 'none';
         setupNewServerSection.style.display = 'none';
         configurationSection.style.display = 'none';
+        terminalSection.style.display = 'none';
+
     }
 
     // Show troubleshooting section
@@ -45,7 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         configurationSection.style.display = 'block';
         loadConfigurationPage()
     });
-
+    terminalLink.addEventListener('click', () => {
+        hideAllSections();
+        terminalSection.style.display = 'block';
+        loadTerminalPage()
+    });
     // Function to load projects for the "Setup New Server" section
     function loadProjects() {
         axios.get(window.APP_URL + '/api/get-systems')
@@ -136,6 +145,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(`Iframe created for configuration page`); // Debug log to confirm iframe creation
     }
+
+
+    function loadTerminalPage() {
+        if (!window.Terminal_URL) {
+            console.error('Terminal URL is not defined.');
+            return;
+        }
+    
+        // Clear existing content
+        terminalSection.innerHTML = '';
+    
+        // Create an iframe element
+        const iframe = document.createElement('iframe');
+        iframe.src = `${window.Terminal_URL}`; // Path to your networking page
+    
+        // Dynamically adjust iframe height based on .main-content height
+        const mainContentHeight = document.querySelector('.main-content').offsetHeight;
+        iframe.style.width = '100%';
+        iframe.style.height = `${mainContentHeight}px`; // Match the height of .main-content
+        iframe.style.border = 'none';
+    
+        // Append the iframe to the section
+        terminalSection.appendChild(iframe);
+    
+        console.log(`Loading terminal from: ${window.Terminal_URL}`);
+        console.log('Iframe created successfully:', iframe);
+    }
+    
     // Default section shown on page load
     if (troubleshootingSection) {
         troubleshootingSection.style.display = 'block'; // Show troubleshooting section by default

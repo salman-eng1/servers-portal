@@ -2,77 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="./js/config.js"></script>
-    <script src="./js/axios.min.js"></script>
-    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+    <style>
+        /* Additional login-specific styles */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f4f6f9;
+        }
+
+        .login-card {
+            width: 400px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-card h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-card input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .login-card button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .login-card button:hover {
+            background-color: #2980b9;
+        }
+
+        .login-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <h2>Dashboard</h2>
-            <ul>
-                <li><a href="#" id="troubleshooting-link">Troubleshooting</a></li>
-                <li><a href="#" id="setup-network-interface-link">Setup Network Interface</a></li>
-                <li><a href="#" id="setup-server-link">Setup New Server</a></li>
-                <li><a href="#" id="configuration-link">Configuration</a></li>
-            </ul>
-        </aside>
-        <main class="main-content">
-        
-            <div id="troubleshooting-section" class="content-section">
-                <h1>Service Control Portal</h1>
-                <div class="button-container">
-                    <button id="check-services">Check Services</button>
-                    <button id="show-running-ports">Show Running Ports</button>
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Login</h1>
+            <form id="login-form">
+                <div class="input-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" required>
                 </div>
-        
-        
-                <!-- Output messages -->
-                <div class="output-container" id="messages"></div>
-            </div>
-        
-        <!-- Progress Modal -->
-        <div id="progress-modal-backdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
-        <div id="progress-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; padding: 20px; border-radius: 10px; z-index: 1000; width: 300px; text-align: center;">
-            <div class="progress-bar">
-                <div id="progress-bar" class="progress-bar-fill"></div>
-            </div>
-            <p>Processing, please wait...</p>
+                <div class="input-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" required>
+                </div>
+                <div class="button-container">
+                  <button type="submit">Login</button>
+                </div>
+              </form>
+              
+            <p><a href="#">Forgot your password?</a></p>
         </div>
-                
-            <!-- Setup Network Interface Section -->
-            <div id="setup-network-interface-section" class="content-section" style="display: none;">
-                <h1>Network Interface Setup</h1>
-                <!-- Add relevant content for this section -->
-            </div>
-
-            <!-- Setup New Server Section -->
-            <div id="setup-new-server-section" class="content-section" style="display: none;">
-                <h1>Available Projects</h1>
-
-                <div class="button-container" id="project-buttons"></div> <!-- Button container for project buttons -->
-                
-                <!-- Project page container where project.html will be loaded -->
-                <div id="project-page-container"></div>
-            </div>
-
-            <!-- Configuration Section -->
-            <div id="configuration-section" class="content-section" style="display: none;">
-                <h1>Configuration Settings</h1>
-                <!-- Add configuration content here -->
-            </div>
-        </main>
     </div>
-
-    <script src="./js/websocket-client.js"></script>
-    <script src="./js/service-control.js"></script>
-    <script src="./js/dashboard.js"></script>
-
-
+    <div id="progress-modal-backdrop"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;">
+</div>
+<div id="progress-modal"
+    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; padding: 20px; border-radius: 10px; z-index: 1000; width: 300px; text-align: center;">
+    <div class="progress-bar">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+    </div>
+    <p>Processing, please wait...</p>
+</div>
+    <script src="./js/config.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 </html>
