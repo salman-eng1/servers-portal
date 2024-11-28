@@ -57,7 +57,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
     );
     await addPorts(systemName)
     const crondata: string=await crontab(systemName) as string
-    await fs.writeFile('/etc/crontab', crondata, 'utf-8');
+    fs.writeFile('/etc/crontab', crondata, 'utf-8');
     const cronCreateData=await crontabCreate()
     await appendToFile('/etc/crontab',cronCreateData)
 
