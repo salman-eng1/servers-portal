@@ -4,7 +4,7 @@ module.exports = {
             name: 'portal',
             exec_mode: 'cluster',
             instances: 1, // Use 'max' to run across all CPU cores
-            script: './build/src/server.js', // Use the compiled JavaScript file
+            script: './build/src/app.js', // Use the compiled JavaScript file
             args: '',
             error_file: './logs/error.log',
             out_file: './logs/output.log',
