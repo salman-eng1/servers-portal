@@ -51,7 +51,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
         const enableCommand = `cd /etc/apache2/sites-available && a2ensite ${project}.conf`;
           await execute(enableCommand, 'terminal');
           const cronCreateData=await crontabCreate()
-          fs.appendFile('/etc/crontab',cronCreateData,'utf-8')
+     await fs.appendFile('/etc/crontab',cronCreateData,'utf-8')
           return project;
       })
     );
