@@ -11,7 +11,7 @@ import { logger } from '@portal/utils/logging';
 import { Server } from 'socket.io';
 import cors from 'cors'
 
-const SERVER_PORT = 5000;
+const SERVER_PORT = process.env.PORT || 5000;
 export let socketIO: Server;
 
 export class PortalServer {

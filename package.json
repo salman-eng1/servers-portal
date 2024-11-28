@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start ./build/src/app.js -i 1 --attach --watch | pino-pretty -c",
+    "start": "pm2 start ./build/src/server.js -i 1 --attach --watch | pino-pretty -c",
     "stop": "pm2 stop all",
     "delete": "pm2 delete all",
     "dev": "nodemon -r tsconfig-paths/register src/app.ts | pino-pretty -c",
@@ -32,7 +32,7 @@
     "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.0.3",
     "pino-pretty": "^10.3.1",
-    "pm2": "^5.4.0",
+    "pm2": "^5.4.3",
     "prettier": "^3.2.4",
     "socket.io": "^4.7.5",
     "typescript": "^5.3.3",
