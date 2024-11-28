@@ -23,3 +23,10 @@ export const fixSymlinks = async (): Promise<string> => {
   return `All symlinks have been fixed correctly` as string;
 
 };
+
+export const fixPermissions = async (systemName: string): Promise<string> => {
+
+  await execute(`bash /home/zeuor/scripts/fix_permissions.sh ${systemName}`, 'terminal');
+  return `All permissions have been granted correctly` as string;
+
+};

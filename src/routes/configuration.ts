@@ -1,4 +1,4 @@
-import { clearProjectCache, fixProjectSymlinks, migrateProjetctDB } from '@portal/controllers/configuration';
+import { clearProjectCache, fixProjectPermissions, fixProjectSymlinks, migrateProjetctDB } from '@portal/controllers/configuration';
 
 
 import express, {Router} from 'express'
@@ -13,6 +13,7 @@ this.router=express.Router();
         this.router.post('/migrate-fresh',migrateProjetctDB)
         this.router.post('/clear-cache',clearProjectCache)
         this.router.post('/fix-symlinks',fixProjectSymlinks)
+        this.router.post('/fix-permissions',fixProjectPermissions)
 
 
         

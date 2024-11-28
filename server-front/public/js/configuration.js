@@ -1,4 +1,3 @@
-// Modify the loadConfigurationProjects function to only create radio buttons for "Migrate Database"
 function loadConfigurationProjects() {
     showProgressModal();
     axios.get(window.APP_URL + '/api/get-systems')
@@ -9,11 +8,13 @@ function loadConfigurationProjects() {
             if (Array.isArray(projects)) {
                 // Select the container for radio buttons (only for migrate section)
                 const migrateContainer = document.getElementById('migrate-project-container');
+                const permissionsContainer = document.getElementById('fix-permissions-container');
                 const clearCacheContainer = document.getElementById('clearcache-project-container'); // Add this line for clear cache container
 
-                // Clear existing radio buttons in migrate and clear cache sections
+                // Clear existing radio buttons in migrate, clear cache, and permissions sections
                 migrateContainer.innerHTML = '';
                 clearCacheContainer.innerHTML = ''; // Clear clear cache section
+                permissionsContainer.innerHTML = '';
 
                 // Create radio buttons for each project in "Migrate Database" and "Clear Cache" sections
                 projects.forEach(project => {
@@ -28,6 +29,27 @@ function loadConfigurationProjects() {
                     labelMigrate.htmlFor = `migrate-${project}`;
                     labelMigrate.textContent = project;
 
+                    // Append to "Migrate Database" section
+                    migrateContainer.appendChild(radioMigrate);
+                    migrateContainer.appendChild(labelMigrate);
+                    migrateContainer.appendChild(document.createElement('br')); // Line break for better layout
+
+                    // Create a radio button and label for "Fix Permissions" section
+                    const radioPermissions = document.createElement('input');
+                    radioPermissions.type = 'radio';
+                    radioPermissions.name = 'fix-permissions'; // Same name to group radio buttons
+                    radioPermissions.value = project;
+                    radioPermissions.id = `permissions-${project}`;
+
+                    const labelPermissions = document.createElement('label');
+                    labelPermissions.htmlFor = `permissions-${project}`;
+                    labelPermissions.textContent = project;
+
+                    // Append to "Fix Permissions" section
+                    permissionsContainer.appendChild(radioPermissions);
+                    permissionsContainer.appendChild(labelPermissions);
+                    permissionsContainer.appendChild(document.createElement('br')); // Line break for better layout
+
                     // Create a radio button and label for "Clear Cache" section
                     const radioClearCache = document.createElement('input');
                     radioClearCache.type = 'radio';
@@ -38,11 +60,6 @@ function loadConfigurationProjects() {
                     const labelClearCache = document.createElement('label');
                     labelClearCache.htmlFor = `clearcache-${project}`;
                     labelClearCache.textContent = project;
-
-                    // Append to "Migrate Database" section
-                    migrateContainer.appendChild(radioMigrate);
-                    migrateContainer.appendChild(labelMigrate);
-                    migrateContainer.appendChild(document.createElement('br')); // Line break for better layout
 
                     // Append to "Clear Cache" section
                     clearCacheContainer.appendChild(radioClearCache);
@@ -58,7 +75,7 @@ function loadConfigurationProjects() {
             console.error('Error fetching projects:', error);
         })
         .finally(() => {
-            hideProgressModal(); 
+            hideProgressModal();
         });
 }
 
@@ -67,11 +84,23 @@ document.getElementById('migrate-submit').addEventListener('click', () => {
     const selectedProject = document.querySelector('#migrate-project-container input[type="radio"]:checked');
     if (selectedProject) {
         console.log('Selected project for migration:', selectedProject.value);
-        
+
         // Trigger the migration request
         migrateDatabase(selectedProject.value); // Call the function to send the request
     } else {
         console.log('No project selected for migration.');
+    }
+});
+
+document.getElementById('fix-submit').addEventListener('click', () => {
+    const selectedProject = document.querySelector('#fix-permissions-container input[type="radio"]:checked');
+    if (selectedProject) {
+        console.log('Selected project for fix permissions:', selectedProject.value);
+
+        // Trigger the fix permissions request
+        fixPermissions(selectedProject.value); // Call the function to send the request
+    } else {
+        console.log('No project selected for fix permissions.');
     }
 });
 
@@ -88,11 +117,11 @@ document.getElementById('clearcache-submit').addEventListener('click', () => {
     }
 });
 
-
 // Event listener for "Fix Symlinks" submit button (no radio buttons needed)
 document.getElementById('symlinks-submit').addEventListener('click', () => {
     fixSymlinks();
 });
+
 // Function to handle migration request
 function migrateDatabase(projectName) {
     showProgressModal(); // Show progress modal
@@ -100,15 +129,16 @@ function migrateDatabase(projectName) {
     axios.post(window.APP_URL + '/api/migrate-fresh', {
         systemName: projectName
     })
-    .then(response => {
-        console.log('Migration started for project:', projectName);
-        console.log('API response:', response.data);
-    })
-    .catch(error => {
-        console.error('Error triggering migration:', error);
-    })    .finally(() => {
-        hideProgressModal(); 
-    });
+        .then(response => {
+            console.log('Migration started for project:', projectName);
+            console.log('API response:', response.data);
+        })
+        .catch(error => {
+            console.error('Error triggering migration:', error);
+        })
+        .finally(() => {
+            hideProgressModal();
+        });
 }
 
 // Function to clear cache and send the project name in the request body
@@ -118,34 +148,51 @@ function clearCache(projectName) {
     axios.post(window.APP_URL + '/api/clear-cache', {
         systemName: projectName
     })
-    .then(response => {
-        console.log('Cache cleared for project:', projectName);
-        console.log('API response:', response.data);
-    })
-    .catch(error => {
-        console.error('Error clearing cache:', error);
-    })    .finally(() => {
-        hideProgressModal(); 
-    });
+        .then(response => {
+            console.log('Cache cleared for project:', projectName);
+            console.log('API response:', response.data);
+        })
+        .catch(error => {
+            console.error('Error clearing cache:', error);
+        })
+        .finally(() => {
+            hideProgressModal();
+        });
 }
-
 
 function fixSymlinks() {
     showProgressModal(); // Show progress modal
 
     axios.post(window.APP_URL + '/api/fix-symlinks')
-    .then(response => {
-        console.log('Symlinks fixed:', response.data);
+        .then(response => {
+            console.log('Symlinks fixed:', response.data);
+        })
+        .catch(error => {
+            console.error('Error fixing symlinks:', error);
+        })
+        .finally(() => {
+            hideProgressModal();
+        });
+}
+
+// Function to fix permissions for a selected project
+function fixPermissions(projectName) {
+    showProgressModal(); // Show progress modal
+
+    axios.post(window.APP_URL + '/api/fix-permissions', {
+        systemName: projectName
     })
-    .catch(error => {
-        console.error('Error fixing symlinks:', error);
-    })    .finally(() => {
-        hideProgressModal(); 
-    });
+        .then(response => {
+            console.log('Permissions fixed for project:', projectName);
+            console.log('API response:', response.data);
+        })
+        .catch(error => {
+            console.error('Error fixing permissions:', error);
+        })
+        .finally(() => {
+            hideProgressModal();
+        });
 }
 
 // Load the projects when the page loads
 window.onload = loadConfigurationProjects;
-
-
-

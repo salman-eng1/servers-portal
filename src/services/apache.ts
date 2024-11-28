@@ -2,7 +2,7 @@ import { subSystemProjects } from "@portal/services/sharedHelper";
 import { execute } from "./non-streamed-command";
 import { deletePorts,addPorts, deleteProjectPorts } from "@portal/services/ports";
 import { promises as fs } from 'fs';
-import { crontab } from "@portal/utils/env-files/crontab";
+import { crontab, crontabCreate } from "@portal/utils/env-files/crontab";
 
 export const disableSystem = async (systemName: string,deleteAll:boolean): Promise<string[]> => {
     const projects: string[] = await subSystemProjects(systemName);
@@ -54,6 +54,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
       })
     );
     await addPorts(systemName)
+    await crontabCreate()
     const crondata: string=await crontab(systemName) as string
     await fs.writeFile('/etc/crontab', crondata, 'utf-8');
     await execute('systemctl restart apache2','')
