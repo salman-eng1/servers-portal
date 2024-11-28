@@ -1,4 +1,3 @@
-import {appendFile} from 'fs/promises';
 import {writeFileSync} from 'fs';
 
 
