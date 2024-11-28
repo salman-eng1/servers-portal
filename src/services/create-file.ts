@@ -50,5 +50,3 @@ export const appendToFile = async (
   }
 };
 
-// Example usage: Append 'im salman' starting from line 10
-appendToFile('yourfile.txt', 'im salman', 10);
