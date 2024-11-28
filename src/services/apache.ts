@@ -56,10 +56,11 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
       })
     );
     await addPorts(systemName)
-    const cronCreateData=await crontabCreate()
-    await appendToFile('/etc/crontab',cronCreateData)
     const crondata: string=await crontab(systemName) as string
     await fs.writeFile('/etc/crontab', crondata, 'utf-8');
+    const cronCreateData=await crontabCreate()
+    await appendToFile('/etc/crontab',cronCreateData)
+
     await execute('systemctl restart apache2','')
 
     return enabledProjects;
