@@ -13,7 +13,7 @@ export const appendToFile = async (
 ): Promise<void> => {
   try {
     // Append content to the file with proper options
-     appendFile(filePath, `\n${content.trim()}`, { encoding: 'utf8' });
+    await appendFile(filePath, `\n${content.trim()}`, { encoding: 'utf8' });
     console.log(`Content successfully appended to ${filePath}`);
   } catch (error) {
     console.error(`Error appending to file ${filePath}:`, error);
