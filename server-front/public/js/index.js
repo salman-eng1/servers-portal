@@ -1,5 +1,5 @@
 // ./js/login.js
- import { EMAIL, PASSWORD } from "./config.js";
+ //import { EMAIL, PASSWORD } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
