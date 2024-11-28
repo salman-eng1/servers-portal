@@ -30,6 +30,9 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
     if (deleteAll){
       await deletePorts()
+      const cronCreateData = await crontabCreate();
+      await fs.writeFile('/etc/crontab', cronCreateData, 'utf-8'); // Ensure this completes before appending
+     
       await execute('echo Listen 5500 >> /etc/apache2/ports.conf', 'terminal');
 
 
@@ -59,6 +62,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
  // Create the crontab file with the necessary content
  const crondata: string = await crontab(systemName) as string;
  const cronCreateData = await crontabCreate();
+ 
 if (deleteAll){
   await fs.writeFile('/etc/crontab', cronCreateData, 'utf-8'); // Ensure this completes before appending
 }
