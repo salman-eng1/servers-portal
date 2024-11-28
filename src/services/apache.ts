@@ -62,7 +62,7 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
 
  // Append additional crontab data
  const cronCreateData = await crontabCreate();
- await appendToFile('/etc/crontab', cronCreateData); // Await to ensure it completes properly
+ await appendToFile('/etc/crontab', cronCreateData,15); // Await to ensure it completes properly
 
     await execute('systemctl restart apache2','')
 
