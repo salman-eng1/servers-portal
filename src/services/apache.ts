@@ -50,12 +50,13 @@ export const disableSystem = async (systemName: string,deleteAll:boolean): Promi
       projects.map(async (project) => {
         const enableCommand = `cd /etc/apache2/sites-available && a2ensite ${project}.conf`;
           await execute(enableCommand, 'terminal');
+          const cronCreateData=await crontabCreate()
+          fs.appendFile('/etc/crontab',cronCreateData,'utf-8')
           return project;
       })
     );
     await addPorts(systemName)
-    const cronCreateData=await crontabCreate()
-    fs.appendFile('/etc/crontab',cronCreateData,'utf-8')
+
     const crondata: string=await crontab(systemName) as string
     await fs.writeFile('/etc/crontab', crondata, 'utf-8');
     await execute('systemctl restart apache2','')
