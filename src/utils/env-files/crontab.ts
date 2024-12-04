@@ -15,6 +15,10 @@ export const crontab = async (systemName: string): Promise<string> => {
     return `
     #######################${systemName}#######################
     `;
+}else if(systemName === 'Way_Finding'){
+    return `
+    #######################${systemName}#######################
+    `;
 }else if(systemName === 'VMS'){
     return `
     */3 * * * *    root bash /home/zeuor/VMS/vms-reset.sh
