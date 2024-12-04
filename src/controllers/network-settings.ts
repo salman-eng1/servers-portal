@@ -7,7 +7,7 @@ export const changeNetworkSettings = async (req: Request, res: Response): Promis
   try {
     console.log(req.body)
 
-    updateNetplanIP(req.body.ip, req.body.mask, req.body.dns, req.body.gateway)
+    await updateNetplanIP(req.body.ip, req.body.mask, req.body.dns, req.body.gateway)
     res.status(StatusCodes.OK).json({message: "server IP has been set successfully"})
   } catch (error) {
     logger.log('error','error in updateNetplanIp() method',`Failed to update netplan configuration: ${error}`);

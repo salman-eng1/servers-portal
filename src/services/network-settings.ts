@@ -60,7 +60,7 @@ if (typeof dns === 'string') {
     await execute(`bash /home/zeuor/scripts/changeEnvIP.sh "${currentIP.trim()}" "${newIP}" /var/www`, 'terminal');    // await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeuor/cron*`,'terminal')
 
     // Apply the changes
-    await execute('netplan apply','');
+    // await execute('netplan apply','');
  
 };
 
