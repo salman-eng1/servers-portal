@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function loadTerminalPage() {
-        if (!window.Terminal_URL) {
+        if (!'http://192.168.1.27:4200') {
             console.error('Terminal URL is not defined.');
             return;
         }
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Create an iframe element
         const iframe = document.createElement('iframe');
-        iframe.src = `${window.Terminal_URL}`; // Path to your networking page
+        iframe.src = `http://192.168.1.27:4200`; // Path to your networking page
     
         // Dynamically adjust iframe height based on .main-content height
         const mainContentHeight = document.querySelector('.main-content').offsetHeight;
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Append the iframe to the section
         terminalSection.appendChild(iframe);
     
-        console.log(`Loading terminal from: ${window.Terminal_URL}`);
+        console.log(`Loading terminal from: http://192.168.1.27:4200`);
         console.log('Iframe created successfully:', iframe);
     }
     
