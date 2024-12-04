@@ -59,7 +59,7 @@ if (typeof dns === 'string') {
 
 
     // Apply the changes
-    await execute('netplan apply','');
+    // await execute('netplan apply','');
     await execute(`nohup bash /home/zeuor/scripts/triggerChangeEnv.sh "${currentIP.trim()}" "${newIP}" /var/www" > /dev/null 2>&1 &`, 'terminal');
 
  
