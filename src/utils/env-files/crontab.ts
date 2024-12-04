@@ -15,7 +15,7 @@ export const crontab = async (systemName: string): Promise<string> => {
     return `
     #######################${systemName}#######################
     `;
-}else if(systemName === 'Way_Finding'){
+}else if(systemName === 'way_finding'){
     return `
     #######################${systemName}#######################
     `;
