@@ -1,5 +1,5 @@
 
-console.log('APP_URL_FRONT:', window.APP_URL_FRONT); // Verify this prints the expected URL
+console.log('APP_URL:', window.APP_URL); // Verify this prints the expected URL
 document.getElementById('check-services').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent any default behavior that might reload the page
     checkServices();
@@ -15,7 +15,7 @@ document.getElementById('show-running-ports').addEventListener('click', function
 
 function checkServices() {
     // showProgressBar()
-    axios.get(window.APP_URL_FRONT+'/api/check-services')
+    axios.get(window.APP_URL+'/api/check-services')
         .then(response => {
             // hideProgressBar()
             // document.getElementById('messages').innerHTML = JSON.stringify('*******', null, 2);
@@ -27,7 +27,7 @@ function checkServices() {
 
 function showRunningPorts() {
     // showProgressBar()
-    axios.get(window.APP_URL_FRONT+'/api/check-ports')
+    axios.get(window.APP_URL+'/api/check-ports')
         .then(response => {
             document.getElementById('messages').innerHTML = JSON.stringify(response.data, null, 2);
             // hideProgressBar()

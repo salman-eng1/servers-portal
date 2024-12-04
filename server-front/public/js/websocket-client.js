@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const socket = io(window.APP_URL_FRONT, {
+    const socket = io(window.APP_URL, {
         reconnection: false,
     });
 
