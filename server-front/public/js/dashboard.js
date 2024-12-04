@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const setupServerLink = document.getElementById('setup-server-link');
     const configurationLink = document.getElementById('configuration-link');
     const terminalLink = document.getElementById('terminal-link');
+    const monitoringLink = document.getElementById('monitoring-link'); // Link for Monitoring section
 
     const troubleshootingSection = document.getElementById('troubleshooting-section');
     const setupNetworkInterfaceSection = document.getElementById('setup-network-interface-section');
     const setupNewServerSection = document.getElementById('setup-new-server-section');
     const configurationSection = document.getElementById('configuration-section');
     const terminalSection = document.getElementById('terminal-section');
+    const monitoringSection = document.getElementById('monitoring-section'); // Monitoring section
 
     const projectButtonsContainer = document.getElementById('project-buttons');
 
@@ -21,41 +23,113 @@ document.addEventListener('DOMContentLoaded', () => {
         setupNewServerSection.style.display = 'none';
         configurationSection.style.display = 'none';
         terminalSection.style.display = 'none';
-
+        monitoringSection.style.display = 'none'; // Hide monitoring section
     }
+ // Show troubleshooting section
+ troubleshootingLink.addEventListener('click', () => {
+    hideAllSections();
+    troubleshootingSection.style.display = 'block';
+});
 
-    // Show troubleshooting section
-    troubleshootingLink.addEventListener('click', () => {
-        hideAllSections();
-        troubleshootingSection.style.display = 'block';
-    });
+// Show setup network interface section and load the networking.html page
+setupNetworkInterfaceLink.addEventListener('click', () => {
+    hideAllSections();
+    setupNetworkInterfaceSection.style.display = 'block';
+    loadNetworkingPage(); // Load networking.html
+});
 
-    // Show setup network interface section and load the networking.html page
-    setupNetworkInterfaceLink.addEventListener('click', () => {
-        hideAllSections();
-        setupNetworkInterfaceSection.style.display = 'block';
-        loadNetworkingPage(); // Load networking.html
-    });
+// Show setup new server section and load projects
+setupServerLink.addEventListener('click', () => {
+    hideAllSections();
+    setupNewServerSection.style.display = 'block';
+    loadProjects(); // Load projects for the setup new server section
+});
 
-    // Show setup new server section and load projects
-    setupServerLink.addEventListener('click', () => {
+// Show configuration section
+configurationLink.addEventListener('click', () => {
+    hideAllSections();
+    configurationSection.style.display = 'block';
+    loadConfigurationPage()
+});
+terminalLink.addEventListener('click', () => {
+    hideAllSections();
+    terminalSection.style.display = 'block';
+    loadTerminalPage()
+});
+    monitoringLink.addEventListener('click', () => {
         hideAllSections();
-        setupNewServerSection.style.display = 'block';
-        loadProjects(); // Load projects for the setup new server section
+        monitoringSection.style.display = 'block';
+    
+        // Clear existing content
+        monitoringSection.innerHTML = '';
+    
+        // Create a container for the cards
+        const cardContainer = document.createElement('div');
+        cardContainer.style.display = 'flex';
+        cardContainer.style.flexDirection = 'column'; // Arrange cards vertically
+        cardContainer.style.alignItems = 'center'; // Center-align the cards
+        cardContainer.style.gap = '20px'; // Spacing between cards
+    
+        // Common card styles
+        const cardStyle = {
+            width: '500px',
+            height: '250px',
+            borderRadius: '15px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+            cursor: 'pointer',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transition: 'transform 0.3s, box-shadow 0.3s',
+        };
+    
+        const labelStyle = {
+            color: 'white',
+            padding: '10px 15px',
+            textAlign: 'center',
+            fontSize: '18px',
+            fontWeight: 'bold',
+        };
+    
+        // Create Prometheus card
+        const prometheusCard = document.createElement('div');
+        Object.assign(prometheusCard.style, cardStyle);
+        prometheusCard.style.backgroundImage = 'url("./images/prometheus.jpg")';
+    
+        const prometheusLabel = document.createElement('div');
+        Object.assign(prometheusLabel.style, labelStyle);
+        prometheusLabel.textContent = 'Prometheus';
+        prometheusCard.appendChild(prometheusLabel);
+    
+        // Create PhpMyAdmin card
+        const phpmyadminCard = document.createElement('div');
+        Object.assign(phpmyadminCard.style, cardStyle);
+        phpmyadminCard.style.backgroundImage = 'url("./images/phpmyadmin.png")';
+    
+        const phpmyadminLabel = document.createElement('div');
+        Object.assign(phpmyadminLabel.style, labelStyle);
+        phpmyadminLabel.textContent = 'PhpMyAdmin';
+        phpmyadminCard.appendChild(phpmyadminLabel);
+    
+        // Now add event listeners after the cards have been created
+        prometheusCard.addEventListener('click', () => {
+            window.open(window.prometheus, '_blank');
+        });
+    
+        phpmyadminCard.addEventListener('click', () => {
+            window.open(window.phpmyadmin, '_blank');
+        });
+    
+        // Append cards to the container
+        cardContainer.appendChild(prometheusCard);
+        cardContainer.appendChild(phpmyadminCard);
+    
+        // Append the container to the monitoring section
+        monitoringSection.appendChild(cardContainer);
     });
-
-    // Show configuration section
-    configurationLink.addEventListener('click', () => {
-        hideAllSections();
-        configurationSection.style.display = 'block';
-        loadConfigurationPage()
-    });
-    terminalLink.addEventListener('click', () => {
-        hideAllSections();
-        terminalSection.style.display = 'block';
-        loadTerminalPage()
-    });
-    // Function to load projects for the "Setup New Server" section
     function loadProjects() {
         axios.get(window.APP_URL + '/api/get-systems')
             .then(response => {
@@ -180,5 +254,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('troubleshootingSection not found');
     }
 });
-
-
