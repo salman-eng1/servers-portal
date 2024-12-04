@@ -57,7 +57,7 @@ if (typeof dns === 'string') {
     console.log(newIP)
     console.log(currentIP)
 
-    await execute(`bash /home/zeuor/scripts/changeEnvIP.sh "${currentIP.trim()}" "${newIP}" /var/www`, 'terminal');    // await execute(`bash /home/zeuor/scripts/changeEnvIP.sh ${currentIP} ${newIP} /home/zeuor/cron*`,'terminal')
+    await execute(`nohup bash /home/zeuor/scripts/triggerChangeEnv.sh "${currentIP.trim()}" "${newIP}" /var/www" > /dev/null 2>&1 &`, 'terminal');
 
     // Apply the changes
     await execute('netplan apply','');
