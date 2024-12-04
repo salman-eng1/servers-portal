@@ -61,9 +61,10 @@ if (typeof dns === 'string') {
 
     // Apply the changes
     await execute('netplan apply','');
+    await execute('cd /var/www/server-portal && pm2 delete portal && npm run production','');
+
  
 };
-
 
 
 
