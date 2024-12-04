@@ -131,7 +131,7 @@ terminalLink.addEventListener('click', () => {
         monitoringSection.appendChild(cardContainer);
     });
     function loadProjects() {
-        axios.get(window.APP_URL + '/api/get-systems')
+        axios.get(window.APP_URL_FRONT + '/api/get-systems')
             .then(response => {
                 console.log('API response:', response.data); // Log the API response
                 const projects = response.data.message;

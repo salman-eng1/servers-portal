@@ -1,6 +1,6 @@
 function loadConfigurationProjects() {
     showProgressModal();
-    axios.get(window.APP_URL + '/api/get-systems')
+    axios.get(window.APP_URL_FRONT + '/api/get-systems')
         .then(response => {
             console.log('API response:', response.data); // Log the API response
             const projects = response.data.message;
@@ -126,7 +126,7 @@ document.getElementById('symlinks-submit').addEventListener('click', () => {
 function migrateDatabase(projectName) {
     showProgressModal(); // Show progress modal
 
-    axios.post(window.APP_URL + '/api/migrate-fresh', {
+    axios.post(window.APP_URL_FRONT + '/api/migrate-fresh', {
         systemName: projectName
     })
         .then(response => {
@@ -145,7 +145,7 @@ function migrateDatabase(projectName) {
 function clearCache(projectName) {
     showProgressModal(); // Show progress modal
 
-    axios.post(window.APP_URL + '/api/clear-cache', {
+    axios.post(window.APP_URL_FRONT + '/api/clear-cache', {
         systemName: projectName
     })
         .then(response => {
@@ -163,7 +163,7 @@ function clearCache(projectName) {
 function fixSymlinks() {
     showProgressModal(); // Show progress modal
 
-    axios.post(window.APP_URL + '/api/fix-symlinks')
+    axios.post(window.APP_URL_FRONT + '/api/fix-symlinks')
         .then(response => {
             console.log('Symlinks fixed:', response.data);
         })
@@ -179,7 +179,7 @@ function fixSymlinks() {
 function fixPermissions(projectName) {
     showProgressModal(); // Show progress modal
 
-    axios.post(window.APP_URL + '/api/fix-permissions', {
+    axios.post(window.APP_URL_FRONT + '/api/fix-permissions', {
         systemName: projectName
     })
         .then(response => {
